@@ -3,7 +3,7 @@
 ## Member Roles:
 [Suraiya P. Mark](https://github.com/suraiyapm/3140_Project/tree/main/Suraiya-Mark_Intro-Stuff) -potentially front-end dev  
 Rabia Rehmein -potentially design, testing/db  
-Francis Harbourt (https://github.com/suraiyapm/3140_Project/blob/Francis/Francis_Harbourt_Intro/intro.html) -potentially back-end dev  
+[Francis Harbourt](https://github.com/suraiyapm/3140_Project/blob/Francis/Francis_Harbourt_Intro/intro.html) -potentially back-end dev  
 
 ## Project Idea:
 The project will, in appearance, be similar to Scrivener, but the core functionality will be focused on organizing an entire topic of research in one place.
