@@ -2,7 +2,7 @@
 ## Placeholder Team Name: MedReader Team(?)
 ## Member Roles:
 [Suraiya P. Mark](https://github.com/suraiyapm/3140_Project/tree/main/Suraiya-Mark_Intro-Stuff) -potentially front-end dev  
-Rabia Rehmein -potentially design, testing/db  
+[Rabia Rehmein](https://github.com/suraiyapm/3140_Project/tree/main/Rabia_Rehmein_Intro) -potentially design, testing/db  
 [Francis Harbourt](https://github.com/suraiyapm/3140_Project/blob/Francis/Francis_Harbourt_Intro/intro.html) -potentially back-end dev  
 
 ## Project Idea:
