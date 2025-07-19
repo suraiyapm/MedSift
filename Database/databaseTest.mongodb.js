@@ -14,7 +14,6 @@
 //for a query environment where you can talk to the database using javascript.
 //as you can see from the file explorer, the extension for these is .mongodb.js.
 //I labeled this one databaseTest.mongodb.js.
-//This instance 
 
 
 // MongoDB Playground
