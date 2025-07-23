@@ -1,6 +1,6 @@
 import medSiftLogo from '/MedSiftLogo.png';
 
-function Home() {
+function Home({navigate}) {
     return (
         <>
         <div className='main-content'> 

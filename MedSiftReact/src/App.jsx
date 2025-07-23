@@ -5,18 +5,18 @@ import { Journals, Home, Notes, Dashboard, About} from "./pages";
 import { Navigation } from "./components"
 
 function App() {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
 
   return (
     <> 
     <div className='main-content'>
       <Navigation navigate={navigate}/>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Journals" element={<Journals />} />
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/About" element={<About />} />
-        <Route path="/Notes" element={<Notes />} />
+        <Route path="/" element={<Home navigate={navigate}/>} />
+        <Route path="/Journals" element={<Journals navigate={navigate}/>} />
+        <Route path="/Notes" element={<Notes navigate={navigate}/>} />
       </Routes> 
     </div>
     </>

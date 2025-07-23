@@ -5,7 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function Navigation({navigate}) {
   return (
-    <Navbar expand="lg" className="navbar justify-content-end">
+    <Navbar expand="lg" className="navbar">
       <Container> 
         <Navbar.Brand href="#home">
           <img
