@@ -20,11 +20,13 @@ p {
 }
 
 .main-content {
+
   padding-top: 2rem;
   display: flex;
   place-items: center;
   flex-direction: column;
   min-width: 80vw;
+
 }
 
 .logo {
