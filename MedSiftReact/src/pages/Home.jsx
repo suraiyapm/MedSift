@@ -13,7 +13,7 @@ function Home() {
         <p>
             Welcome to MedSift! This app is designed to be a one-stop-shop for med students to find and aggregate relevant 
             materials quickly and efficiently, take and organise notes that directly reference said materials, and store
-            everything for easy access anywhere in the world! We are currently under construction but are a targeting a August 19th 2025 release date.
+            everything for easy access anywhere in the world! We are currently under construction but are targeting an August 19th 2025 release date.
             We look forward to serving you very soon!
         </p>
         <p>

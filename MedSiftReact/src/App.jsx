@@ -1,7 +1,7 @@
 import { Route, Routes, useNavigate } from 'react-router'
 import { Container } from 'react-bootstrap';
 import './App.css'
-import { Journals, Home, Notes} from "./pages";
+import { Journals, Home, Notes, Dashboard, About} from "./pages";
 import { Navigation } from "./components"
 
 function App() {
@@ -14,6 +14,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Journals" element={<Journals />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/About" element={<About />} />
         <Route path="/Notes" element={<Notes />} />
       </Routes> 
     </div>
