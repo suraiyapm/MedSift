@@ -3,7 +3,7 @@ import medSiftLogo from '/MedSiftLogo.png';
 function Home() {
     return (
         <>
-        <div> 
+        <div className='main-content'> 
         <a href="https://github.com/mrDNA219/3140_Project" target="_blank">
           <img src={medSiftLogo} className="logo" alt="Vite logo" />
         </a>
