@@ -1,3 +1,4 @@
+//This is our main frontend file that injects all of our ReactJS code into our html file. 
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route} from 'react-router'
 import './main.css'

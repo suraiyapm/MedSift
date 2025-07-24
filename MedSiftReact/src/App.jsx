@@ -1,5 +1,7 @@
+//APP.jsx is basically a component "wrapper" for all of our other components. 
+//It's where we link them all together and export to be rendered by main.jsx. 
+
 import { Route, Routes, useNavigate } from 'react-router'
-import { Container } from 'react-bootstrap';
 import './App.css'
 import { Journals, Home, Notes, Dashboard, About} from "./pages";
 import { Navigation } from "./components"
