@@ -23,7 +23,7 @@ function Notes() {
     <div className='main-content'>
         <div className='main-content'>
             {
-                notes ? notes.map((note) => 
+                notes.length ? notes.map((note) => 
                 {
                     const {noteName , text} = note;
                     return (
