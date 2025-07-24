@@ -17,6 +17,7 @@ p {
   top: 0;
   width: 80%;
   background-color: #6B9AC4; 
+  z-index: 100;
 }
 
 .main-content {

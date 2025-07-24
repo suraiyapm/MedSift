@@ -1,6 +1,7 @@
 import medSiftLogo from '/MedSiftLogo.png';
 
 function Home({navigate}) {
+
     return (
         <>
         <div className='main-content'> 
@@ -15,9 +16,6 @@ function Home({navigate}) {
             materials quickly and efficiently, take and organise notes that directly reference said materials, and store
             everything for easy access anywhere in the world! We are currently under construction but are targeting an August 19th 2025 release date.
             We look forward to serving you very soon!
-        </p>
-        <p>
-          hello world!
         </p>
       </div>
         </>
