@@ -1,5 +1,5 @@
-const express = require('express');
-const notesRouter = express.Router();
+import { Router } from 'express';
+const notesRouter = Router();
 
 notesRouter.get('/', (req, res) => {
 
@@ -18,4 +18,4 @@ notesRouter.get('/', (req, res) => {
     )
 });
 
-module.exports = notesRouter;
+export default notesRouter;
