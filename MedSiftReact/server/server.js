@@ -4,12 +4,15 @@
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
+import dotenv from 'dotenv';
 const server = express();
 const port = 3000;
 import indexRouter from './routes/index.js';
-const connectionString = "mongodb+srv://nharbourt:Joejoe2199!@medsift.j5r1iba.mongodb.net/?retryWrites=true&w=majority&appName=MedSift";
 import seedDatabase from '../database/seed.js';
 import { MongoClient } from 'mongodb';
+
+dotenv.config();
+const connectionString = process.env.DATABASE_URL;
 
 server.use(cors());
 server.use(morgan('combined'));
