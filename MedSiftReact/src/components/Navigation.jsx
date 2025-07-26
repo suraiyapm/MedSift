@@ -23,7 +23,7 @@ function Navigation({navigate}) {
             <Nav.Link onClick={() => navigate("/Journals")}>Journals</Nav.Link>
             <Nav.Link onClick={() => navigate("/Dashboard")}>Dashboard</Nav.Link>
             <Nav.Link onClick={() => navigate("/About")}>About</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown title="Actions" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Brain Map</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -34,6 +34,7 @@ function Navigation({navigate}) {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link onClick={() => navigate("/Login")}>Login</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -3,7 +3,7 @@
 
 import { Route, Routes, useNavigate } from 'react-router'
 import './App.css'
-import { Journals, Home, Notes, Dashboard, About} from "./pages";
+import { Journals, Home, Notes, Dashboard, About, Login} from "./pages";
 import { Navigation } from "./components"
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
         <Route path="/" element={<Home navigate={navigate}/>} />
         <Route path="/Journals" element={<Journals navigate={navigate}/>} />
         <Route path="/Notes" element={<Notes navigate={navigate}/>} />
+        <Route path="/Login" element={<Login navigate={navigate}/>} />
       </Routes> 
     </div>
     </>
