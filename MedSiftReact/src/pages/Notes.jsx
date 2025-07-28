@@ -8,7 +8,7 @@ function Notes() {
     async function getNotesHelper(){
         const result = await getAllNotes();
         if(result){
-            setNotes(result);
+            setNotes(result.data);
         } else {
             console.error("error getting notes");
         }
@@ -25,11 +25,10 @@ function Notes() {
             {
                 notes.length ? notes.map((note) => 
                 {
-                    const {noteName , text} = note;
+
                     return (
-                    <div className='card'>
-                        <h1>{noteName}</h1>
-                        <p>{text}</p>
+                    <div key={note._id} className='card'>
+                        <p>{note.text}</p>
                     </div>
                     );
                 }) : 
