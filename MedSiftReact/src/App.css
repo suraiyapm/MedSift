@@ -7,16 +7,20 @@
 
 p {
   font-size: 22px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .navbar {
-  border: 1px solid #4059AD;
+  border: 4px solid #869ad9;
   border-radius: 25px;
   position: fixed;
   margin-top: 2rem;
   top: 0;
   width: 80%;
-  background-color: #6B9AC4; 
+  background-color: #cfe9f3;
+  font-weight:bold;
+  font-size:1.1em;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .main-content {
@@ -30,14 +34,14 @@ p {
 }
 
 .logo {
-  height: 10em;
-  padding: 1.5em;
+  height: 14em;
+  padding: 1em;
   will-change: filter;
   transition: filter 300ms;
 }
 
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #185c89aa);
 }
 
 .logo.react:hover {

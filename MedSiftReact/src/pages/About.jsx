@@ -1,4 +1,4 @@
-import medSiftLogo from '/MedSiftLogo.png';
+import medSiftLogo from '/MedSiftReact/public/MedSiftLogo1-SPM';
 
 function About() {
     return (

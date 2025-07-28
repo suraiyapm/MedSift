@@ -9,11 +9,11 @@ function Navigation({navigate}) {
       <Container> 
         <Navbar.Brand href="#home">
           <img
-              src="/public/MedSiftLogo.png"
+              src="/MedSiftLogo1-SPM.png"
               width="40"
               height="40"
               className="d-inline-block align-top"
-              alt="React Bootstrap logo"
+              alt="Logo"
             />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

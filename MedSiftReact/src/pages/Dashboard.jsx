@@ -1,4 +1,4 @@
-import medSiftLogo from '/MedSiftLogo.png';
+import medSiftLogo from '/MedSiftLogo1-SPM.png';
 
 function Dashboard() {
     return (

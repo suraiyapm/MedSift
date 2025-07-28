@@ -20,7 +20,7 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #1B4079;
+  color: #1c6eea;
 }
 
 body {
@@ -30,7 +30,7 @@ body {
   place-items: center;
   min-height: 100vh;
   min-width: 80vw;
-  
+  background-image:linear-gradient(#d9dfff, #838cbf);
 }
 
 h1 {
@@ -50,7 +50,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #686fe8;
 }
 button:focus,
 button:focus-visible {
