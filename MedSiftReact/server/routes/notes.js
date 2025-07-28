@@ -1,21 +1,43 @@
 import { Router } from 'express';
+import Note from '../../database/models/notes.model.js';
 const notesRouter = Router();
 
-notesRouter.get('/', (req, res) => {
+notesRouter.get("/", async (req, res) => {
+    try {
+        const notes = await Note.find({});
+        res.status(200).json({ success: true, data: notes});
+    } catch (error) {
+        console.log("Error getting all notes");
+        res.status(500).json({ success: false, message: "Server error"});
+        
+    }
+})
 
-    res.json(
-    [
-        {
-            noteName: 'Test Note #1',
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        },
-        {
-            noteName: 'Test Note #2',
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+notesRouter.post("/",  async (req, res) => {
+    const note = req.body;
 
-        }
-    ]
-    )
+    if(!note.text){
+        return res.status(400).json({success: false, message: "A note must include text"});
+    }
+    const newNote = new Note(note);
+    try {
+        await newNote.save();
+        res.status(201).json({ success: true, data: newNote});
+    } catch (error){
+        console.log("Error posting note");
+        res.status(500).json({ success: false, message: "Server error"});
+    }
 });
+
+notesRouter.patch("/:id", async (req, res) => {
+    const id = req.body;
+    try {
+        await Note.getNoteById({id})
+    } catch (error)
+    {
+        console.error(error);
+        res.status(500).json({ success: false, message: "Server error"});
+    }
+})
 
 export default notesRouter;
