@@ -1,7 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function Navigation({navigate}) {
   return (
@@ -20,21 +19,12 @@ function Navigation({navigate}) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
-            <Nav.Link onClick={() => navigate("/Journals")}>Journals</Nav.Link>
-            <Nav.Link onClick={() => navigate("/Dashboard")}>Dashboard</Nav.Link>
-            <Nav.Link onClick={() => navigate("/About")}>About</Nav.Link>
-            <NavDropdown title="Actions" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Brain Map</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item onClick={() => navigate("/Notes")}>Notes</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link onClick={() => navigate("/Login")}>Login</Nav.Link>
+            <Nav.Link onClick={() => navigate("/journals")}>Journals</Nav.Link>
+            <Nav.Link onClick={() => navigate("/dashboard")}>Dashboard</Nav.Link>
+            <Nav.Link onClick={() => navigate("/notes")}>Notes</Nav.Link>
+            <Nav.Link onClick={() => navigate("/register")}>Register</Nav.Link>
+            <Nav.Link onClick={() => navigate("/login")}>Login</Nav.Link>
+            <Nav.Link onClick={() => navigate("/about")}>About</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
