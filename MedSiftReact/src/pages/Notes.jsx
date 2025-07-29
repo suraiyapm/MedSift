@@ -13,7 +13,6 @@ function Notes() {
             console.error("error getting notes");
         }
     }
-
     useEffect(() => {
         getNotesHelper();
     }, []);
@@ -25,7 +24,6 @@ function Notes() {
             {
                 notes.length ? notes.map((note) => 
                 {
-
                     return (
                     <div key={note._id} className='card'>
                         <p>{note.text}</p>
@@ -33,7 +31,7 @@ function Notes() {
                     );
                 }) : 
                     <div className='card'>
-                        <p>This will be the Notes page</p>
+                        <p>Notes empty...check connection to server</p>
                     </div>
             }
         </div>
