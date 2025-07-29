@@ -1,29 +1,30 @@
 import { useEffect, useState } from 'react';
 import { getAllNotes, getAllNotesByAuthorId} from '../api';        
-
+import { NoteCreator } from '../components';
 
 function Notes({userId}) {
+    
     const [notes, setNotes] = useState([]);
  
     async function getNotesHelper(){
-        if(userId){
         const result = await getAllNotesByAuthorId(userId); 
             if(result){
                 setNotes(result);
             } else {
                 console.error("error getting notes");
             }
-        }
     };
     
 
     useEffect(() => {
         getNotesHelper();
-    }, []);
+    }, [userId]);
 
     return (
     <>
     <div className='main-content'>
+        <h1>Note Creator</h1>
+        <NoteCreator userId={userId} getNotesHelper={getNotesHelper}></NoteCreator>
         <div className='main-content'>
             {
                 notes.length ? notes.map((note) => 
@@ -36,8 +37,7 @@ function Notes({userId}) {
                 }) : 
                     <div className='card'>
                         <p>Notes empty...please login or create a note!</p>
-                    </div>
- 
+                    </div> 
             }
         </div>
     </div>

@@ -20,6 +20,8 @@ export const getAllNotes = async () => {
     }
 }
 
+//think about changing authorId to userId
+
 export const getAllNotesByAuthorId = async (authorId) => {
     try{
         const headers = createHeaders();
@@ -52,6 +54,21 @@ export const loginUser = async ({...loginInfo}) => {
             body: JSON.stringify(loginInfo)
         }).then(response => response.json());
     } catch (error) {
+        console.error(error);
+    }
+}
+
+
+export const createNote = async ({...newNote}) => {
+    try{
+        const headers = createHeaders();
+        console.log("this is api layer: ", newNote);
+        return await fetch(`${base_url}/api/notes`, {
+            method: 'POST',
+            headers,
+            body: JSON.stringify(newNote)
+        }).then(response => response.json());
+    } catch (error){
         console.error(error);
     }
 }

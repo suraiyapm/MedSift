@@ -8,8 +8,20 @@ import { Navigation } from "./components"
 
 function App() {
   const [userId, setUserId] = useState('');
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
+  console.log(window.localStorage);
+  
+  async function grabUserIdFromStorage() {
+    if(!userId){
+      setUserId( window.localStorage.getItem('userId'));
+    }
+  }
+
+  useEffect(() => {
+    grabUserIdFromStorage();
+  }, []);
+  
   return (
     <> 
     <div className='main-content'>
