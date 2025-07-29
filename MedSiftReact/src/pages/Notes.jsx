@@ -1,18 +1,22 @@
 import { useEffect, useState } from 'react';
-import { getAllNotes } from '../api';        
+import { getAllNotes, getAllNotesByAuthorId} from '../api';        
 
 
-function Notes() {
+function Notes({userId}) {
     const [notes, setNotes] = useState([]);
-
+ 
     async function getNotesHelper(){
-        const result = await getAllNotes();
-        if(result){
-            setNotes(result.data);
-        } else {
-            console.error("error getting notes");
+        if(userId){
+        const result = await getAllNotesByAuthorId(userId); 
+            if(result){
+                setNotes(result);
+            } else {
+                console.error("error getting notes");
+            }
         }
-    }
+    };
+    
+
     useEffect(() => {
         getNotesHelper();
     }, []);
@@ -31,8 +35,9 @@ function Notes() {
                     );
                 }) : 
                     <div className='card'>
-                        <p>Notes empty...check connection to server</p>
+                        <p>Notes empty...please login or create a note!</p>
                     </div>
+ 
             }
         </div>
     </div>

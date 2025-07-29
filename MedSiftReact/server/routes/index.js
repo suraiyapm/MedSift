@@ -7,4 +7,7 @@ indexRouter.get('/', (req, res) => {
 import notesRouter from './notes.js';
 indexRouter.use('/notes', notesRouter);
 
+import usersRouter from './users.js';
+indexRouter.use('/users', usersRouter);
+
 export default indexRouter;

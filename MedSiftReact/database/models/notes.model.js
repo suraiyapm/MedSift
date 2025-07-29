@@ -4,7 +4,12 @@ import mongoose from "mongoose";
 const notesSchema = new mongoose.Schema({
     text: {
         type: String,
-        requaired: true
+        required: true
+    },
+    author: {
+        type: mongoose.Types.ObjectId,
+        ref: 'User',
+        required: true
     }
 }, {
     timestamps: true

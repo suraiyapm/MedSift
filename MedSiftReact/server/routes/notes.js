@@ -11,6 +11,22 @@ notesRouter.get("/", async (req, res) => {
         res.status(500).json({ success: false, message: "Server error"});
         
     }
+});
+
+notesRouter.get("/:authorId", async (req, res) => {
+    const {authorId} = req.params;
+    try {
+        const allNotesByAuthor = await Note.find({author: authorId});
+        if(allNotesByAuthor){
+            res.send(allNotesByAuthor);
+        } else {
+            res.send( {success: false, message: "No notes by author"});
+        }
+
+    } catch (error) {
+        res.send({ succes: false, message: "Error getting author's notes"});
+        console.error(error);
+    }
 })
 
 notesRouter.post("/",  async (req, res) => {
@@ -25,7 +41,7 @@ notesRouter.post("/",  async (req, res) => {
         res.status(201).json({ success: true, data: newNote});
     } catch (error){
         console.log("Error posting note");
-        res.status(500).json({ success: false, message: "Server error"});
+        res.send({ success: false, message: "Notes server error"});
     }
 });
 
