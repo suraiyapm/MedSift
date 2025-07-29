@@ -31,17 +31,18 @@ notesRouter.get("/:authorId", async (req, res) => {
 
 notesRouter.post("/",  async (req, res) => {
     const note = req.body;
-
+    console.log("this is the server before schema applied:", note);
     if(!note.text){
-        return res.status(400).json({success: false, message: "A note must include text"});
+        res.send({ success: false, message: "A note must include text"});
     }
     const newNote = new Note(note);
+    console.log("This is the server after schema applied:", newNote);
     try {
         await newNote.save();
-        res.status(201).json({ success: true, data: newNote});
+        res.send({ success: true, data: newNote});
     } catch (error){
         console.log("Error posting note");
-        res.send({ success: false, message: "Notes server error"});
+        res.send({ success: false, message: "Server error creating a note"});
     }
 });
 

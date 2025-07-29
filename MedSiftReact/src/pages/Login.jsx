@@ -11,8 +11,9 @@ function Login({navigate, setUserId}) {
     e.preventDefault();
     const result = await loginUser(loginInfo);
     if(!result.message){
+      console.log(result);
       setUserId(result.data[0]._id);
-      window.localStorage.setItem('userId', result.data._id);
+      window.localStorage.setItem('userId', result.data[0]._id);
       navigate('/');
     } else {
       alert(`${result.message}`);
