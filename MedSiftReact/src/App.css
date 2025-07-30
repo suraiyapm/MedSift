@@ -21,6 +21,7 @@ p {
   font-weight:bold;
   font-size:1.1em;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  z-index: 100;
 }
 
 .main-content {
