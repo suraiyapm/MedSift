@@ -23,7 +23,6 @@ function Notes({userId}) {
     return (
     <>
     <div className='main-content'>
-        <h1>Note Creator</h1>
         <NoteCreator userId={userId} getNotesHelper={getNotesHelper}></NoteCreator>
         <div className='main-content'>
             {
