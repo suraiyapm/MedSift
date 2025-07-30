@@ -14,7 +14,7 @@ function Register({navigate, setUserId}) {
     if(!result.message){
       console.log(result);
       setUserId(result.data._id);
-      window.localStorage.setItem('userId', result.data[0]._id);
+      window.localStorage.setItem('userId', result.data._id);
       navigate('/');
     } else {
       alert(`${result.message}`);
