@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import Note from '../../database/models/notes.model.js';
+
 const notesRouter = Router();
+
 
 notesRouter.get("/", async (req, res) => {
     try {
@@ -27,7 +29,7 @@ notesRouter.get("/:authorId", async (req, res) => {
         res.send({ succes: false, message: "Error getting author's notes"});
         console.error(error);
     }
-})
+});
 
 notesRouter.post("/",  async (req, res) => {
     const note = req.body;

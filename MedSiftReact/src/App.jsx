@@ -26,8 +26,8 @@ function App() {
   
   return (
     <> 
+    <Navigation navigate={navigate}/>
     <div className='main-content'>
-      <Navigation navigate={navigate}/>
       <Routes>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/about" element={<About />} />
