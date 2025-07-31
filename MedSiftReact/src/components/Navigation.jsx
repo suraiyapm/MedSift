@@ -31,5 +31,5 @@ function Navigation({navigate}) {
     </Navbar>
   );
 }
-
+// haven't resolved nav stuff yet, but soon!
 export default Navigation;

@@ -11,6 +11,7 @@ function Dashboard() {
       <h1>Dashboard</h1>
       <div className="card">
         <p>Placeholder for dashboard area: My Notes, Annotations, Followed Topics/Journals/Ongoing, Bookmarks</p>
+        {/* Ignore this for now! It's very much still in the works so I'll paste this part a tiny bit later */}
       </div>
         </>
     )

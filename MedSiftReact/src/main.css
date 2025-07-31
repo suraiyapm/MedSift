@@ -14,6 +14,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* anchor */
 a {
   font-weight: 500;
   color: #1B4079;
@@ -22,6 +23,7 @@ a {
 a:hover {
   color: #1c6eea;
 }
+/* anchor end */
 
 body {
   padding: 0d;
@@ -33,11 +35,24 @@ body {
   background-image:linear-gradient(#d9dfff, #838cbf);
 }
 
+p {
+  font-size: 22px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* headings */
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  background-color: #0a0c2700;
 }
+h4 {
+  font-weight:bold;
+}
+/* headings end */
 
+
+/* button */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -56,6 +71,7 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+/* button end */
 
 @media (prefers-color-scheme: light) {
   :root {
