@@ -6,6 +6,8 @@ import './App.css'
 import { Journals, Home, Notes, Dashboard, About, Register, Login} from "./pages";
 import { Navigation } from "./components"
 
+
+
 function App() {
   const [userId, setUserId] = useState('');
   const navigate = useNavigate();
@@ -34,8 +36,7 @@ function App() {
         <Route path="/notes" element={<Notes navigate={navigate} userId={userId}/>} />
         <Route path="/register" element={<Register navigate={navigate} setUserId={setUserId} />} />
         <Route path="/login" element={<Login navigate={navigate} setUserId={setUserId} />} />
-        
-      </Routes> 
+        </Routes> 
     </div>
     </>
   )
