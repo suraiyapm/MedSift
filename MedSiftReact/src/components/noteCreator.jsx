@@ -8,16 +8,12 @@ function NoteCreator({userId, getNotesHelper}) {
         text: "",
         author: ""
     });
-        console.log("userId:", userId);
-        console.log(newNote);
 
     async function createNoteHelper(userId) {
       const result = await createNote(newNote);
-      console.log("this is the result:",result);
       if(result){
          alert("Note successfully created!");
-        console.log(result.data);
-        getNotesHelper();
+         getNotesHelper();
       } else {
         alert(`${result.message}`);
       }  

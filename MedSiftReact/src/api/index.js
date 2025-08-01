@@ -62,12 +62,23 @@ export const loginUser = async ({...loginInfo}) => {
 export const createNote = async ({...newNote}) => {
     try{
         const headers = createHeaders();
-        console.log("this is api layer: ", newNote);
         return await fetch(`${base_url}/api/notes`, {
             method: 'POST',
             headers,
             body: JSON.stringify(newNote)
         }).then(response => response.json());
+    } catch (error){
+        console.error(error);
+    }
+}
+
+export const deleteUser = async (userId) => {
+    try {
+        const headers = createHeaders();
+        return await fetch(`${base_url}/api/users/${userId}`, {
+            method: 'DELETE',
+            headers,
+        }).then(response => response.json()); 
     } catch (error){
         console.error(error);
     }

@@ -31,6 +31,7 @@ notesRouter.get("/:authorId", async (req, res) => {
     }
 });
 
+
 notesRouter.post("/",  async (req, res) => {
     const note = req.body;
     console.log("this is the server before schema applied:", note);
@@ -49,14 +50,33 @@ notesRouter.post("/",  async (req, res) => {
 });
 
 notesRouter.patch("/:id", async (req, res) => {
-    const id = req.body;
+    const id = req.params;
+    const updates = req.body;
+    if(!updates || !id){
+        res.send({ success: false, message: "Please provide both updates and an id for note"});
+    }
     try {
-        await Note.getNoteById({id})
+        const updatedNote = await Note.findByIdAndUpdate({id}, {...updates});
+        res.send({ success: true, data: updatedNote });
     } catch (error)
     {
         console.error(error);
         res.status(500).json({ success: false, message: "Server error"});
     }
-})
+});
+
+notesRouter.delete("/:id", async (req, res) => {
+    const {id} = req.params;
+    if(!id){
+        res.send({ success: false, message: "no id submitted for note"});
+    }
+    try {
+     const deletedNote = await Note.findByIdAndDelete(id);
+     res.send({ success: true, data: deletedNote});
+    } catch (error){
+        res.send({ success: false, message: "Server error"});
+        console.error(error);
+    }
+});
 
 export default notesRouter;

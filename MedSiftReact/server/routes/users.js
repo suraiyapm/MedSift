@@ -1,5 +1,6 @@
 import express from 'express';
 import User from '../../database/models/users.model.js';
+import Note from '../../database/models/notes.model.js';
 const usersRouter = express.Router();
 
 
@@ -33,16 +34,26 @@ usersRouter.post('/login', async (req, res) => {
     } else {
         res.send({ success: false, message: "No username/password combination in database"});
     }
-
     } catch (error) {
         res.send({ success: false, message: "Error logging in...check username/password"});
         console.error(error);
     }
+});
 
-
-
-})
-
-
+usersRouter.delete('/:userId', async (req, res) => {
+    const {userId} = req.params;
+    if(!userId){
+        res.send({ success: false, message: "please provide a userId for deletion"});
+    }
+    try {
+        const deletedUser = await User.findByIdAndDelete(userId).then(await Note.deleteMany({ author: userId}));
+        if(deletedUser){
+            res.send({ success: true});
+        }
+    } catch (error) {
+        res.send({ success: false, message: "Server Error"});
+        console.error(error);
+    }
+});
 
 export default usersRouter;
