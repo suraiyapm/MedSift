@@ -1,10 +1,11 @@
 import medSiftLogo from '/MedSiftLogo.png';
-import {Countdown} from '../components';
+import { Countdown } from '../components';
 
-function Home({navigate}) {
+
+function Home({navigate}) { 
 
     return (
-        <>
+         <>
         <div className='main-content'> 
           <Countdown targetDate="2025-08-19T00:00:00" />
           
@@ -21,9 +22,7 @@ function Home({navigate}) {
             We look forward to serving you very soon!
         </p>
       </div>
-  
         </>
-        
     )
 }
 

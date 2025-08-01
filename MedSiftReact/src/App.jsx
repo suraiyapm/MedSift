@@ -11,9 +11,7 @@ import { Navigation } from "./components"
 function App() {
   const [userId, setUserId] = useState('');
   const navigate = useNavigate();
-
-  console.log(window.localStorage);
-  
+ 
   async function grabUserIdFromStorage() {
     if(!userId){
       setUserId( window.localStorage.getItem('userId'));
@@ -29,7 +27,7 @@ function App() {
     <Navigation navigate={navigate}/>
     <div className='main-content'>
       <Routes>
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard userId={userId} setUserId={setUserId} navigate={navigate}/>} />
         <Route path="/about" element={<About />} />
         <Route path="/" element={<Home navigate={navigate}/>} />
         <Route path="/journals" element={<Journals navigate={navigate}/>} />
