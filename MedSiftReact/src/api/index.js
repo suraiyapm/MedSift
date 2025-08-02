@@ -1,8 +1,12 @@
 //we will un-comment this when we are ready to connect to database ---->
 
 
+
 // const base_url = "medsift.j5r1iba.mongodb.net";
 const base_url = 'http://localhost:3000';
+const ncbi_esearch_url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi';
+const ncbi_efetch_url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcig';
+const ncbi_api_key = '6bb2bc72b70584c3358ab4777c3c9f890408';
 
 function createHeaders()
 {
@@ -80,6 +84,16 @@ export const deleteUser = async (userId) => {
             headers,
         }).then(response => response.json()); 
     } catch (error){
+        console.error(error);
+    }
+}
+
+
+export const fetchPubMedPapers = async (queryTerm) => {
+    try {
+        return await fetch(`${base_url}/api/pubmed/${queryTerm}`).then(response => response.json());
+    }
+    catch(error){
         console.error(error);
     }
 }

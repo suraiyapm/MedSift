@@ -10,4 +10,7 @@ indexRouter.use('/notes', notesRouter);
 import usersRouter from './users.js';
 indexRouter.use('/users', usersRouter);
 
+import pubmedRouter from './pubmed.js';
+indexRouter.use('/pubmed', pubmedRouter);
+
 export default indexRouter;
