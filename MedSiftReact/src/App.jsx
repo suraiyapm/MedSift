@@ -30,7 +30,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard userId={userId} setUserId={setUserId} navigate={navigate}/>} />
         <Route path="/about" element={<About />} />
         <Route path="/" element={<Home navigate={navigate}/>} />
-        <Route path="/journals" element={<Journals navigate={navigate}/>} />
+        <Route path="/journals" element={<Journals navigate={navigate} userId={userId}/>} />
         <Route path="/notes" element={<Notes navigate={navigate} userId={userId}/>} />
         <Route path="/register" element={<Register navigate={navigate} setUserId={setUserId} />} />
         <Route path="/login" element={<Login navigate={navigate} setUserId={setUserId} />} />

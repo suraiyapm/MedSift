@@ -1,7 +1,7 @@
-import { fetchPubMedPapers } from "../api";
+import { fetchPubMedPapers, createJournal } from "../api";
 import { useEffect, useState } from "react";
 
-function Journals() {
+function Journals({userId}) {
     const [journals, setJournals] = useState([]);
     const [journalSearch, setJournalSearch] = useState('');
 
@@ -11,12 +11,10 @@ const fetchPapersHelper = async (e) => {
     if(result){
         const formattedJournals = transformJournalData(result.result);
         setJournals(formattedJournals);
-        console.log("journals: ", journals);
     }
 };
 
 function transformJournalData(apiData) {
-  console.log("starting transformer");
   const { uids = [] } = apiData;
 
   return uids.map(uid => {
@@ -36,8 +34,19 @@ function transformJournalData(apiData) {
       uid: journal.uid
     };
   });
-}
+};
 
+async function createJournalHelper(journal){
+    console.log("journal format coming into helper function: ", journal);
+    const result = await createJournal(journal);
+    if(!result.message){
+        console.log('result: ', result);
+        alert('Successfully saved journal');
+
+    } else {
+        alert(`${result.message}`);
+    }
+} 
 
     return ( 
     <div className="main-content">
@@ -49,17 +58,22 @@ function transformJournalData(apiData) {
         {
             journals.length ? journals.map((journal) => {
                 return (
-                    <div id={journal.uid} className="card">
+                    <div key={journal.uid} className="card">
                     {
+                        
                         Object.entries(journal).map(([key, value]) =>  {
                             return (
-                                <>
+                                <div key={Math.floor(Math.random() * (100000000 - 0 + 1))}>
                                 <h1 style={{fontSize: '26px'}}>{key}</h1>
                                 <p>{value}</p>
-                                </>
+                                </div>
                             )
                         })
                     }    
+                    <button onClick={(e) => {
+                        e.preventDefault();
+                        createJournalHelper({user: userId, ...journal});
+                    }} >Save Journal</button>
                     </div>
                 );
             }) : 

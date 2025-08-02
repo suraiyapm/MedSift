@@ -11,23 +11,43 @@ p {
 
 .navbar {
   border: 1px solid #4059AD;
-  border-radius: 25px;
-  position: fixed;
-  margin-top: 2rem;
+  position: sticky;
   top: 0;
-  width: 80%;
-  background-color: #6B9AC4; 
+  width: 100%;
+  background-color: transparent;
   z-index: 100;
+  width: 100%;
+  max-width: var(--container);
+  justify-content: space-between;
+  padding: 0;
 }
 
 .main-content {
-
+  margin-top: 4rem;
   padding-top: 2rem;
   display: flex;
   place-items: center;
   flex-direction: column;
   min-width: 80vw;
 
+}
+.nav-button {
+  margin-left: 2rem
+}
+
+.notes-form {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  
+}
+
+#create-notes-button {
+  margin: 2rem;
+}
+
+#notes-text-area {
+  margin: 2rem;
 }
 
 .logo {
@@ -61,9 +81,15 @@ p {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
   padding: 2em;
   width: 80%;
   height: 30rem;
+  opacity: 0.8;
+  background-color: #EADEDA;
+  margin: 2rem;
 }
 
 .read-the-docs {

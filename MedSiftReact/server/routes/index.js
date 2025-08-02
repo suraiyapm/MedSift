@@ -13,4 +13,7 @@ indexRouter.use('/users', usersRouter);
 import pubmedRouter from './pubmed.js';
 indexRouter.use('/pubmed', pubmedRouter);
 
+import journalsRouter from './journals.js';
+indexRouter.use('/journals', journalsRouter);
+
 export default indexRouter;

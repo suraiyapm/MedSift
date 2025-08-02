@@ -7,7 +7,6 @@ const pubmedRouter = Router();
 
 pubmedRouter.get("/:queryTerm", async (req, res) => {
     const {queryTerm} = req.params;
-    console.log("made it to server"); 
     const searchParams = new URLSearchParams({
         api_key: ncbi_api_key,
         db: 'pubmed',
@@ -19,7 +18,6 @@ pubmedRouter.get("/:queryTerm", async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     try {
         const searchResult = await fetch(`${ncbi_esearch_url}?${searchParams}`).then(response => response.json());
-        console.log(searchResult);
         const queryKey = searchResult.esearchresult.querykey;
         const webenv = searchResult.esearchresult.webenv;
         const summaryParams = new URLSearchParams({
@@ -30,7 +28,6 @@ pubmedRouter.get("/:queryTerm", async (req, res) => {
             retmax: 10
         })
         const summaryResult = await fetch(`${ncbi_efetch_url}?${summaryParams}`).then(response => response.json()); 
-        console.log(summaryResult);
         res.send(summaryResult);
     } catch(error){
         console.error(error);

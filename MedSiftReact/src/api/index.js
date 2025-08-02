@@ -97,3 +97,28 @@ export const fetchPubMedPapers = async (queryTerm) => {
         console.error(error);
     }
 }
+
+
+export const createJournal = async ({...journal}) => {
+    try{
+        const headers = createHeaders();
+        return await fetch(`${base_url}/api/journals`, {
+            method: 'POST',
+            headers,
+            body: JSON.stringify(journal)
+        }).then(response => response.json());
+    } catch (error){
+        console.error(error);
+    }
+};
+
+export const getAllJournalsByUserId = async (userId) => {
+    try {
+        const headers = createHeaders();
+        return await fetch(`${base_url}/api/journals/${userId}`, {
+            headers
+        }).then(response => response.json());
+    } catch (error){
+        console.error(error);
+    }
+};
