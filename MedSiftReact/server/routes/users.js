@@ -29,10 +29,10 @@ usersRouter.post('/login', async (req, res) => {
     }
     try {
     const userLogin = await User.find({ username: user.username, password: user.password});
-    if(userLogin){
+    if(userLogin.data){
         res.send({ success: true, data: userLogin});
     } else {
-        res.send({ success: false, message: "No username/password combination in database"});
+        res.send({ success: false, message: "No username/password combination in database...please register to login"});
     }
     } catch (error) {
         res.send({ success: false, message: "Error logging in...check username/password"});
