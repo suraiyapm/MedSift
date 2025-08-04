@@ -1,19 +1,19 @@
 
 /* Miscellaneous Class Stuff */
 .navbar {
-  border: 4px solid #869ad9;
-  border-radius: 25px;
-  position: fixed;
-  margin-top: 2rem;
+  border: 1px solid #4059AD;
+  position: sticky;
   top: 0;
-  width: 80%;
-  background-color: #cfe9f3;
-  font-weight:bold;
-  font-size:1.1em;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 100%;
+  background-color: transparent;
   z-index: 100;
+  width: 100%;
+  max-width: var(--container);
+  justify-content: space-between;
+  padding: 0;
 }
 .main-content {
+  margin-top: 4rem;
   padding-top: 2rem;
   display: flex;
   place-items: center;
@@ -43,7 +43,25 @@ p.transparent-background {
 }
 .read-the-docs {
   color: #888888;
+}.nav-button {
+  margin-left: 2rem
 }
+
+.notes-form {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  
+}
+
+#create-notes-button {
+  margin: 2rem;
+}
+
+#notes-text-area {
+  margin: 2rem;
+}
+
 .logo {
   height: 14em;
   padding: 1em;
@@ -109,7 +127,17 @@ p.transparent-background {
   }
 }
 
-
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding: 2em;
+  width: 80%;
+  height: 30rem;
+  opacity: 0.8;
+  background-color: #EADEDA;
+  margin: 2rem;
+}
 /* #flipbox-container {
   font-size: 36px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;

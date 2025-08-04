@@ -1,13 +1,10 @@
-
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,12 +17,16 @@ a {
   color: #1B4079;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #1c6eea;
 }
 /* anchor end */
 
 body {
+  background-image: url(https://images.pexels.com/photos/3683041/pexels-photo-3683041.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 0d;
   margin: 0;
   display: flex;

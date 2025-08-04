@@ -18,13 +18,13 @@ function Navigation({navigate}) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
-            <Nav.Link onClick={() => navigate("/journals")}>Journals</Nav.Link>
-            <Nav.Link onClick={() => navigate("/dashboard")}>Dashboard</Nav.Link>
-            <Nav.Link onClick={() => navigate("/notes")}>Notes</Nav.Link>
-            <Nav.Link onClick={() => navigate("/register")}>Register</Nav.Link>
-            <Nav.Link onClick={() => navigate("/login")}>Login</Nav.Link>
-            <Nav.Link onClick={() => navigate("/about")}>About</Nav.Link>
+            <Nav.Link className='nav-button' onClick={() => navigate("/")}>Home</Nav.Link>
+            <Nav.Link className='nav-button' onClick={() => navigate("/journals")}>Journals</Nav.Link>
+            <Nav.Link className='nav-button' onClick={() => navigate("/dashboard")}>Dashboard</Nav.Link>
+            <Nav.Link className='nav-button' onClick={() => navigate("/notes")}>Notes</Nav.Link>
+            <Nav.Link className='nav-button' onClick={() => navigate("/register")}>Register</Nav.Link>
+            <Nav.Link className='nav-button' onClick={() => navigate("/login")}>Login</Nav.Link>
+            <Nav.Link className='nav-button' onClick={() => navigate("/about")}>About</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

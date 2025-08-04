@@ -1,10 +1,14 @@
 import medSiftLogo from '/MedSiftLogo1-SPM.png';
+import { Countdown } from '../components';
 
-function Home({navigate}) {
+
+function Home({navigate}) { 
 
     return (
-        <>
+         <>
         <div className='main-content'> 
+          <Countdown targetDate="2025-08-19T00:00:00" />
+          
         <a href="https://github.com/mrDNA219/3140_Project" target="_blank">
           <img src={medSiftLogo} className="logo" alt="Vite logo" />
         </a>

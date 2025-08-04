@@ -6,12 +6,12 @@ import './App.css'
 import { Journals, Home, Notes, Dashboard, About, Register, Login} from "./pages";
 import { Navigation } from "./components"
 
+
+
 function App() {
   const [userId, setUserId] = useState('');
   const navigate = useNavigate();
-
-  console.log(window.localStorage);
-  
+ 
   async function grabUserIdFromStorage() {
     if(!userId){
       setUserId( window.localStorage.getItem('userId'));
@@ -24,18 +24,17 @@ function App() {
   
   return (
     <> 
+    <Navigation navigate={navigate}/>
     <div className='main-content'>
-      <Navigation navigate={navigate}/>
       <Routes>
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard userId={userId} setUserId={setUserId} navigate={navigate}/>} />
         <Route path="/about" element={<About />} />
         <Route path="/" element={<Home navigate={navigate}/>} />
-        <Route path="/journals" element={<Journals navigate={navigate}/>} />
+        <Route path="/journals" element={<Journals navigate={navigate} userId={userId}/>} />
         <Route path="/notes" element={<Notes navigate={navigate} userId={userId}/>} />
         <Route path="/register" element={<Register navigate={navigate} setUserId={setUserId} />} />
         <Route path="/login" element={<Login navigate={navigate} setUserId={setUserId} />} />
-        
-      </Routes> 
+        </Routes> 
     </div>
     </>
   )
