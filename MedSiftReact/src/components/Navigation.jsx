@@ -39,8 +39,8 @@ function Navigation({ navigate }) {
       <div className="nav-logo" onClick={() => navigate("/")}>
         <img
           src="/MedSiftLogo1-SPM.png"
-          width="40"
-          height="40"
+          width="60"
+          height="60"
           className="d-inline-block align-top"
           alt="Logo"
         />

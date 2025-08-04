@@ -25,12 +25,13 @@
   align-items:center;
   background-color:#a9dbd7;
   padding:0.5rem 1rem;
-  box-shadow:0 2px 6px rgb(29, 48, 48);
+  box-shadow:0 1px 10px rgb(22, 83, 83);
   font-family:'naviFont', sans-serif;
   font-weight:bold;
 }
 img.nav-logo {
   cursor: pointer;
+  padding-right:16px;
 }
 .navi-links {
   list-style:none;
@@ -38,21 +39,29 @@ img.nav-logo {
   gap:1rem;
   margin:0;
   padding:0;
+  margin-left:14px;
 }
 /* .nav-links li {
   display:inline;
 } */
 .navi-links li a {
-  background:none;
-  border:none;
+  /* background:none; */
+  background-color: #f380e2;
+  border-radius:8px;
+  border:solid;
+  border-color:aliceblue;
   padding:0.5rem;
   font-size:1.1rem;
   cursor:pointer;
   transition:color 0.3s ease;
+  color:white;
+  font-weight:bold;
+  text-shadow: 0px 1px 3px rgb(15, 15, 91);
 }
 .navi-links li a:hover {
   background-color:#3d678b;
   color:#bec0f1;
+  padding:0.8rem;
 }
 
 
