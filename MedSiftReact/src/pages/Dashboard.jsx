@@ -36,6 +36,17 @@ function Dashboard({userId, navigate}) {
           <img src={medSiftLogo} className="logo" alt="Vite logo" />
         </a>
         <h1>Dashboard</h1>
+
+        {/* theme stuff not finished yet! */}
+        <button id="theme-button">Swap</button>
+
+        <script>
+          const themeButton = document.getElementById('theme-button');
+          const body = document.body;
+          body.classList.add('light');
+          themeButton.addEventListener('click', )
+        </script>
+
         <h2>Saved Journals:</h2>
         {
           usersJournals.length ? usersJournals.map((jrn) => {

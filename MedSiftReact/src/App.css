@@ -1,6 +1,6 @@
 
 /* Miscellaneous Class Stuff */
-.navbar {
+/* .navbar {
   border: 1px solid #4059AD;
   position: sticky;
   top: 0;
@@ -11,7 +11,7 @@
   max-width: var(--container);
   justify-content: space-between;
   padding: 0;
-}
+} */
 .main-content {
   margin-top: 4rem;
   padding-top: 2rem;
@@ -22,9 +22,19 @@
 }
 .white-text {
   color:white;
+}
+.black-text {
+  color:black;
+}
+.bold-light-shadow {
+  font-weight:bold;
+  text-shadow: 2px 4px 3px #7a5ff0;
+}
+.bold-dark-shadow {
   font-weight:bold;
   text-shadow: 2px 4px 3px #1a1a1a;
 }
+
 img.about-photos {
   width:40%;
   height:auto;
