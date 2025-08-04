@@ -1,7 +1,5 @@
 //we will un-comment this when we are ready to connect to database ---->
 
-
-
 // const base_url = "medsift.j5r1iba.mongodb.net";
 const base_url = 'http://localhost:3000';
 const ncbi_esearch_url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi';
@@ -118,6 +116,29 @@ export const getAllJournalsByUserId = async (userId) => {
         return await fetch(`${base_url}/api/journals/${userId}`, {
             headers
         }).then(response => response.json());
+    } catch (error){
+        console.error(error);
+    }
+};
+
+export const deleteNote = async (noteId) => {
+    try {
+        const headers = createHeaders();
+        return await fetch(`${base_url}/api/notes/${noteId}`, {
+            method: 'DELETE',
+            headers
+        }).then(response => response.json());
+    } catch (error){
+        console.error(error);
+    }
+};
+
+export const deleteJournal = async (journalId) => {
+    try {
+        const headers = createHeaders();
+        return await fetch(`${base_url}/api/journals/${journalId}`, {
+             method: 'DELETE', 
+             headers}).then(response => response.json());
     } catch (error){
         console.error(error);
     }
