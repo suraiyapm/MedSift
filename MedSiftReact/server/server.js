@@ -1,6 +1,5 @@
 //Please excuse the mess in here! Alot of this will be moved into seperate router files...
 //this is just for testing formatting 
-
 import { connectDB } from '../database/db.js';
 import express from 'express';
 import morgan from 'morgan';
@@ -21,5 +20,6 @@ server.use('/api', indexRouter);
 
 server.listen(port, () => {
   connectDB();
-  console.log(`Server listening on port ${port}`)
+  console.log(`Server listening on port ${port}`);
+  console.log(`Connection to server successful`);
 });

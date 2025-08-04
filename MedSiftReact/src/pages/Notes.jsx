@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getAllNotes, getAllNotesByAuthorId} from '../api';        
+import { getAllNotes, getAllNotesByAuthorId, deleteNote} from '../api';        
 import { NoteCreator } from '../components';
 
 function Notes({userId}) {
@@ -14,6 +14,16 @@ function Notes({userId}) {
                 console.error("error getting notes");
             }
     };
+
+    async function deleteNotesHelper(noteId){
+        const result = await deleteNote(noteId);
+        if(result){
+            alert('note successfully deleted');
+            getNotesHelper();
+        } else {
+            alert(`${result.message}`);
+        }
+    }
     
 
     useEffect(() => {
@@ -31,6 +41,10 @@ function Notes({userId}) {
                     return (
                     <div key={note._id} className='card'>
                         <p>{note.text}</p>
+                        <button onClick={(e) => {
+                            e.preventDefault();
+                            deleteNotesHelper(note._id);
+                        }}>Delete Note</button>
                     </div>
                     );
                 }) : 

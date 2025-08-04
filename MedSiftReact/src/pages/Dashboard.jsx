@@ -1,8 +1,8 @@
 import medSiftLogo from '/MedSiftLogo.png';
-import { deleteUser, getAllJournalsByUserId } from '../api';
+import { deleteUser, getAllJournalsByUserId, deleteJournal } from '../api';
 import { useEffect, useState } from 'react';
 
-function Dashboard({userId, navigate}) {
+function Dashboard({userId, navigate, setUserId, setUsername}) {
 
   const [usersJournals, setUsersJournals] = useState([]);
 
@@ -11,6 +11,8 @@ function Dashboard({userId, navigate}) {
     const result = await deleteUser(userId);
     if(!result.message){
       window.localStorage.removeItem('userId');
+      setUserId('');
+      setUsername('');
       navigate("/register");
     } else {
       alert(`${result.message}`);
@@ -19,15 +21,28 @@ function Dashboard({userId, navigate}) {
 
   const getAllJournalsHelper = async() => {
     const result = await getAllJournalsByUserId(userId);
-    if(!result.message){
+    if(result){
+      if(!result.message){
       setUsersJournals(result.data);
+      }
     } else {
       alert(`${result.message}`);
     }
   };
+  
+  const deleteJournalsHelper = async(journalId) => {
+    const result = await deleteJournal(journalId);
+    if(result){
+        alert('Successfully deleted journal');
+        getAllJournalsHelper();
+    } else {
+      alert(`${result.message}`);
+    }
+
+  }
   useEffect(() => {
     getAllJournalsHelper();
-  }, [userId]);
+  }, []);
 
     return (
         <>
@@ -58,6 +73,9 @@ function Dashboard({userId, navigate}) {
                 <p>{issue}</p>
                 <h2>ElocationId</h2>
                 <p>{elocationid}</p>
+                <button onClick={() => {
+                  deleteJournalsHelper(_id);
+                }}>Delete Journal</button>
               </div>
             )
           }) : 
@@ -65,7 +83,7 @@ function Dashboard({userId, navigate}) {
             <p>No Saved Journals</p>
           </div>
         }
-        <button onClick={handleDeleteUser}>DELETE ACCOUNT</button>
+        <button style={{color: 'red'}}onClick={handleDeleteUser}>DELETE ACCOUNT</button>
       </div>
         </>
     )

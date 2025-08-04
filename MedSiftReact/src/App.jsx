@@ -9,6 +9,7 @@ import { Navigation } from "./components"
 
 
 function App() {
+  const [username, setUsername] = useState('');
   const [userId, setUserId] = useState('');
   const navigate = useNavigate();
  
@@ -24,15 +25,15 @@ function App() {
   
   return (
     <> 
-    <Navigation navigate={navigate}/>
+    <Navigation navigate={navigate} userId={userId}/>
     <div className='main-content'>
       <Routes>
-        <Route path="/dashboard" element={<Dashboard userId={userId} setUserId={setUserId} navigate={navigate}/>} />
+        <Route path="/dashboard" element={<Dashboard userId={userId} setUserId={setUserId} navigate={navigate} setUsername={setUsername}/>} />
         <Route path="/about" element={<About />} />
-        <Route path="/" element={<Home navigate={navigate}/>} />
+        <Route path="/" element={<Home navigate={navigate} username={username}/>} />
         <Route path="/journals" element={<Journals navigate={navigate} userId={userId}/>} />
         <Route path="/notes" element={<Notes navigate={navigate} userId={userId}/>} />
-        <Route path="/register" element={<Register navigate={navigate} setUserId={setUserId} />} />
+        <Route path="/register" element={<Register navigate={navigate} setUserId={setUserId} setUsername={setUsername}/>} />
         <Route path="/login" element={<Login navigate={navigate} setUserId={setUserId} />} />
         </Routes> 
     </div>

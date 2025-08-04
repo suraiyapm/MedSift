@@ -30,5 +30,20 @@ journalsRouter.post('/', async (req, res) => {
     }
 });
 
+journalsRouter.delete('/:journalId', async (req, res) => {
+    const {journalId} = req.params;
+    try{
+        const result = await Journal.findByIdAndDelete(journalId);
+        if(result){
+            res.send({ success: true});
+        } else {
+            res.send({ success: false, message: "Database error deleting journal"});
+        }
+    } catch (error){
+        console.error(error);
+        res.send({ success: false, message: "Server error deleting journal"});
+    }
+})
+
 
 export default journalsRouter;
