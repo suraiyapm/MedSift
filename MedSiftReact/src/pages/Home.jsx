@@ -1,4 +1,4 @@
-import medSiftLogo from '/MedSiftLogo.png';
+import medSiftLogo from '/MedSiftLogo1-SPM.png';
 import { Countdown } from '../components';
 
 
@@ -18,7 +18,7 @@ function Home({navigate, username}) {
       </div>
       <h1>Vite+React+MongoDB</h1>
       <div className="card">
-        <p>
+        <p class="transparent-bkg">
             Welcome to MedSift! This app is designed to be a one-stop-shop for med students to find and aggregate relevant 
             materials quickly and efficiently, take and organise notes that directly reference said materials, and store
             everything for easy access anywhere in the world! We are currently under construction but are targeting an August 19th 2025 release date.
