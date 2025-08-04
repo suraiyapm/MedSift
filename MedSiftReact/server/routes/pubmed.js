@@ -12,7 +12,7 @@ pubmedRouter.get("/:queryTerm", async (req, res) => {
         db: 'pubmed',
         term: queryTerm,
         retmode: 'json',
-        retmax: 10,
+        retmax: 100,
         usehistory: 'y'
     });
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -25,7 +25,7 @@ pubmedRouter.get("/:queryTerm", async (req, res) => {
             query_key: queryKey,
             WebEnv: webenv,
             retmode: 'json',
-            retmax: 10
+            retmax: 100
         })
         const summaryResult = await fetch(`${ncbi_efetch_url}?${summaryParams}`).then(response => response.json()); 
         res.send(summaryResult);

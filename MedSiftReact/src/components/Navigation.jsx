@@ -2,7 +2,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-function Navigation({navigate}) {
+function Navigation({navigate, userId}) {
+  console.log(userId);
   return (
     <Navbar expand="lg" className="navbar">
       <Container> 
@@ -23,7 +24,10 @@ function Navigation({navigate}) {
             <Nav.Link className='nav-button' onClick={() => navigate("/dashboard")}>Dashboard</Nav.Link>
             <Nav.Link className='nav-button' onClick={() => navigate("/notes")}>Notes</Nav.Link>
             <Nav.Link className='nav-button' onClick={() => navigate("/register")}>Register</Nav.Link>
+            {
+              userId ? <></> :  
             <Nav.Link className='nav-button' onClick={() => navigate("/login")}>Login</Nav.Link>
+            }
             <Nav.Link className='nav-button' onClick={() => navigate("/about")}>About</Nav.Link>
           </Nav>
         </Navbar.Collapse>

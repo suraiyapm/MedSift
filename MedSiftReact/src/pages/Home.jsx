@@ -2,11 +2,14 @@ import medSiftLogo from '/MedSiftLogo.png';
 import { Countdown } from '../components';
 
 
-function Home({navigate}) { 
+function Home({navigate, username}) { 
 
     return (
          <>
         <div className='main-content'> 
+          {
+            username ? <h1>Welcome {username}!</h1> : <></>
+          }
           <Countdown targetDate="2025-08-19T00:00:00" />
           
         <a href="https://github.com/mrDNA219/3140_Project" target="_blank">

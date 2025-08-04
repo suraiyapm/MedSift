@@ -37,12 +37,9 @@ function transformJournalData(apiData) {
 };
 
 async function createJournalHelper(journal){
-    console.log("journal format coming into helper function: ", journal);
     const result = await createJournal(journal);
     if(!result.message){
-        console.log('result: ', result);
         alert('Successfully saved journal');
-
     } else {
         alert(`${result.message}`);
     }
