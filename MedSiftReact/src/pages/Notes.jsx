@@ -18,7 +18,6 @@ function Notes({userId}) {
     async function deleteNotesHelper(noteId){
         const result = await deleteNote(noteId);
         if(result){
-            alert('note successfully deleted');
             getNotesHelper();
         } else {
             alert(`${result.message}`);

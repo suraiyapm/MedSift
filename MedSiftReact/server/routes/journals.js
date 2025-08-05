@@ -4,6 +4,7 @@ const journalsRouter = Router();
 
 journalsRouter.get('/:userId', async (req, res) => {
     const { userId } = req.params;
+    console.log("server userId: ", userId);
     try{
         const usersJournals = await Journal.find({user: userId});
         if(usersJournals){

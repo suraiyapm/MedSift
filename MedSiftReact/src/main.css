@@ -1,4 +1,16 @@
 
+.oswald-medsift {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  font-family: 'oswald-medsift';
+}
+
+
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -13,10 +25,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@font-face {
-  font-family: naviFont;
-  src: url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-}
 
 
 .nav-container {
