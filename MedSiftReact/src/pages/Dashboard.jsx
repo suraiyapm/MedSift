@@ -1,16 +1,17 @@
 
 import medSiftLogo from '/MedSiftLogo1-SPM.png';
 import { deleteUser, getAllJournalsByUserId, deleteJournal } from '../api';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 function Dashboard({userId, navigate, setUserId, setUsername}) {
 
   const [usersJournals, setUsersJournals] = useState([]);
+  const hasPageBeenRendered = useRef(false);
 
   const handleDeleteUser = async (event) => {
     event.preventDefault();
     const result = await deleteUser(userId);
-    if(!result.message){
+    if(result){
       window.localStorage.removeItem('userId');
       setUserId('');
       setUsername('');
@@ -20,30 +21,30 @@ function Dashboard({userId, navigate, setUserId, setUsername}) {
     }
   };
 
-  const getAllJournalsHelper = async() => {
+  const getAllJournalsHelper = async(userId) => {
+    if(userId !== undefined){
     const result = await getAllJournalsByUserId(userId);
     if(result){
-      if(!result.message){
       setUsersJournals(result.data);
-      }
-    } else {
-      alert(`${result.message}`);
+    }
     }
   };
   
   const deleteJournalsHelper = async(journalId) => {
     const result = await deleteJournal(journalId);
     if(result){
-        alert('Successfully deleted journal');
-        getAllJournalsHelper();
+        getAllJournalsHelper(userId);
     } else {
       alert(`${result.message}`);
     }
 
   }
   useEffect(() => {
-    getAllJournalsHelper();
-  }, []);
+    if(hasPageBeenRendered.current){
+    getAllJournalsHelper(userId);
+    }
+    hasPageBeenRendered.current = true;
+  }, [userId]);
 
     return (
         <>
@@ -65,7 +66,7 @@ function Dashboard({userId, navigate, setUserId, setUsername}) {
 
         <h2>Saved Journals:</h2>
         {
-          usersJournals.length ? usersJournals.map((jrn) => {
+          usersJournals ? usersJournals.map((jrn) => {
             const {title, authors, journal, pubdate, pages, volume, issue, elocationid, _id} = jrn;
             return (
               <div key={_id} className='card'>
@@ -85,7 +86,8 @@ function Dashboard({userId, navigate, setUserId, setUsername}) {
                 <p>{issue}</p>
                 <h2>ElocationId</h2>
                 <p>{elocationid}</p>
-                <button onClick={() => {
+                <button onClick={(e) => {
+                  e.preventDefault();
                   deleteJournalsHelper(_id);
                 }}>Delete Journal</button>
               </div>
