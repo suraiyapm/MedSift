@@ -13,7 +13,8 @@ function Navigation({ navigate, userId }) {
       </div>
       <ul className = "navi-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/journals">Journals</a></li>
+        <li><a href="/journals">Journals</a></li> 
+        <li><a href="/journals_summaries">Journal Summaries</a></li>
         <li><a href="/dashboard">Dashboard</a></li>
         <li><a href="/notes">Notes</a></li>
         <li><a href="/register">Register</a></li>

@@ -89,9 +89,16 @@ export const deleteUser = async (userId) => {
 
 export const fetchPubMedPapers = async (queryTerm) => {
     try {
-        return await fetch(`${base_url}/api/pubmed/${queryTerm}`).then(response => response.json());
+        return await fetch(`${base_url}/api/pubmed/${queryTerm}`).then(response => response.text());
+    } catch(error){
+        console.error(error);
     }
-    catch(error){
+}
+
+export const fetchPubMedSummaries = async (queryTerm) => {
+    try{
+        return await fetch(`${base_url}/api/pubmedSummary/${queryTerm}`).then(response => response.json());
+    } catch (error) {
         console.error(error);
     }
 }
@@ -110,6 +117,19 @@ export const createJournal = async ({...journal}) => {
     }
 };
 
+export const createFullJournal = async ({...fullJournal}) => {
+    try {
+        const headers = createHeaders();
+        return await fetch(`${base_url}/api/fullJournals`, {
+            method: 'POST',
+            headers,
+            body: JSON.stringify(fullJournal)
+        }).then(response => response.json());
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 export const getAllJournalsByUserId = async (userId) => {
     try {
         const headers = createHeaders();
@@ -120,6 +140,17 @@ export const getAllJournalsByUserId = async (userId) => {
         console.error(error);
     }
 };
+
+export const getAllUsersFullJournalsByUserId = async (userId) => {
+    try {
+        const headers = createHeaders();
+        return await fetch(`${base_url}/api/fullJournals/${userId}`, {
+            headers
+        }).then(response => response.json());
+    } catch (error){
+        console.error(error);
+    }
+}
 
 export const deleteNote = async (noteId) => {
     try {
@@ -143,3 +174,15 @@ export const deleteJournal = async (journalId) => {
         console.error(error);
     }
 };
+
+export const deleteFullJournal = async (fullJournalId) => {
+    try {
+        const headers = createHeaders();
+        return await fetch(`${base_url}/api/fullJournals/${fullJournalId}`, {
+            method: "DELETE",
+            headers
+        }).then(response => response.json());
+    } catch (error) {
+        console.error(error);
+    }
+}
