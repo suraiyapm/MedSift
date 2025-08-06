@@ -12,7 +12,7 @@ function About() {
         </a>
       </div>
       <div id="about-back">
-        <h1 class="white-text" id="heads-up">About:</h1>
+        <h1 className="white-text" id="heads-up">About:</h1>
         <div className="card">
           <div id="about">
             <h4>Welcome to MedSift!</h4>
@@ -30,7 +30,7 @@ function About() {
               Keeping in mind the current insufficiencies in existing tools in the space,
               we're developing something new for use by medical students and researchers alike!
             </p>
-            <img src={pic1} class="about-photos" id="pic1specific" alt="Sitting around a table, tablets out" />
+            <img src={pic1} className="about-photos" id="pic1specific" alt="Sitting around a table, tablets out" />
             <p>
               <br />
               There's a lacuna in the world of digital, medical tools.
@@ -42,7 +42,7 @@ function About() {
               With an innovative idea and an ambitious deadline, we're striving to improve the accessibility
               and ease of access of convenient a convenient medical tool!
               <br />
-              <img src={pic2} class="about-photos" id="pic2specific" alt="Laptop, stethoscope" />
+              <img src={pic2} className="about-photos" id="pic2specific" alt="Laptop, stethoscope" />
               <br />
               As medical education is increasingly reliant on digital resources, students need smarter,
               centralized tools to stay ahead.
@@ -52,7 +52,7 @@ function About() {
               <br />
               {/* going to make an actual dedicated spacer soon sorry! Ignore this LOL */}
               <br />
-              <img src={pic3} class="about-photos" id="pic3specific" alt="Three monitors, scans" />
+              <img src={pic3} className="about-photos" id="pic3specific" alt="Three monitors, scans" />
               <br />
               <br />
               MedSift is a web-based platform that allows students to search medical journals, create annotaions,
