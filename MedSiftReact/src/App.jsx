@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router'
 import './App.css'
-import { Journals, Home, Notes, Dashboard, About, Register, Login} from "./pages";
+import { Journals, JournalSummaries, Home, Notes, Dashboard, About, Register, Login} from "./pages";
 import { Navigation } from "./components"
 
 
@@ -32,6 +32,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/" element={<Home navigate={navigate} username={username}/>} />
         <Route path="/journals" element={<Journals navigate={navigate} userId={userId}/>} />
+        <Route path="/journals_summaries" element={<JournalSummaries navigate={navigate} userId={userId}/>} /> 
         <Route path="/notes" element={<Notes navigate={navigate} userId={userId}/>} />
         <Route path="/register" element={<Register navigate={navigate} setUserId={setUserId} setUsername={setUsername}/>} />
         <Route path="/login" element={<Login navigate={navigate} setUserId={setUserId} />} />
