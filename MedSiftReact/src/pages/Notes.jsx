@@ -31,9 +31,7 @@ function Notes({userId}) {
 
     return (
     <>
-    <div className='main-content'>
         <NoteCreator userId={userId} getNotesHelper={getNotesHelper}></NoteCreator>
-        <div className='main-content'>
             {
                 notes.length ? notes.map((note) => 
                 {
@@ -51,8 +49,6 @@ function Notes({userId}) {
                         <p>Notes empty...please login or create a note!</p>
                     </div> 
             }
-        </div>
-    </div>
     </>
     );
 }
