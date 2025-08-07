@@ -88,7 +88,7 @@ function Dashboard({userId, navigate, setUserId, setUsername}) {
             const {_id, text} = fullJournal;
             return (
                 <div key={_id} className='card'>
-                  <p>{text}</p>
+                  <textarea defaultValue={text}></textarea>
                   <button onClick={(e) => {
                     e.preventDefault();
                     deleteFullJournalHelper(_id);
