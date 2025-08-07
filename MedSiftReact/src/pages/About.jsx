@@ -11,8 +11,8 @@ function About() {
           <img src={medSiftLogo} className="logo" alt="Vite logo" />
         </a>
       </div>
-      <div id="about-back frosted lighting">
-        <h1 class="white-text bold-orange-shadow" id="heads-up">About:</h1>
+      <div id="about-back" className="frosted lighting">
+        <h1 className="white-text bold-orange-shadow" id="heads-up">About:</h1>
         <div className="card frosted lighting">
           <div id="about" className="frosted-more lighting-layer">
             <h4 className="glow bold header1 lighting-layer">Welcome to MedSift!</h4>
