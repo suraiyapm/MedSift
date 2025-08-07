@@ -13,11 +13,11 @@ function Home({navigate, username}) {
           <Countdown targetDate="2025-08-19T00:00:00" />
           
         <a href="https://github.com/mrDNA219/3140_Project" target="_blank">
-          <img src={medSiftLogo} className="logo" alt="Vite logo" />
+          <img src={medSiftLogo} className="logo frosted lighting" alt="Vite logo" />
         </a>
       </div>
       {/* <h1>Vite+React+MongoDB</h1> */}
-      <h1 class="header1">MedSift</h1>
+      <h1 class="header1 lighting frosted">MedSift</h1>
       <div className="card">
         <p className="transparent-bkg">
             Welcome to MedSift! This app is designed to be a one-stop-shop for med students to find and aggregate relevant 

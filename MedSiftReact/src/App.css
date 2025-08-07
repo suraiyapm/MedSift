@@ -67,24 +67,23 @@ p.transparent-background {
 .frosted {
   backdrop-filter:blur(5px) !important;
   background:rgba(199, 199, 199, 0.274) !important;
-  border-radius:16px;
-  border-top:1px groove rgba(108, 108, 108, 0.02);
-  border-left:1px groove rgba(92, 92, 92, 0.02);
-  border-right:1px groove rgba(0, 0, 0, 0.256);
-  border-bottom:1px groove rgba(0, 0, 0, 0.256);
+  border-radius:16px !important;
+  border-top:1px groove rgba(108, 108, 108, 0.02) !important;
+  border-left:1px groove rgba(92, 92, 92, 0.02) !important;
+  border-right:1px groove rgba(0, 0, 0, 0.205) !important;
+  border-bottom:1px groove rgba(0, 0, 0, 0.205) !important;
   /* border:1px solid rgba(0, 0, 0, 0.025) !important; */
 }
 .lighting {
     box-shadow: /*8px 8px 14px rgba(0, 0, 0, 0.293),
     -8px -8px 20px rgba(255, 255, 255, 0.468),  */
     /* 0 8px 32px rgba(0, 0, 0, 0.956), */
-    -8px -6px 14px rgba(255, 247, 233, 0.648),
-    8px 6px 20px rgba(0, 0, 0, 0.393), /* bottom right */
+    /* -15px -8px 25px rgba(255, 247, 233, 0.648) #fce7a3, */
+    -15px -8px 45px #fce7a3,
+    8px 6px 16px /*rgba(0, 0, 0, 0.393)*/ #b4711fb4 , /* bottom right */
     inset 2px 2px 6px rgba(255, 247, 233, 0.484),
     inset 0 0 12px 15px rgba(255, 255, 255, 0.103), /* (Mostly for me to remember) when shadow has 4 numbers, it's horizontal offset/x, vertical offset/y, blur radius, then SPREAD radius! */
-    inset -2px -2px 4px rgba(0, 0, 0, 0.268);
-
-
+    inset -2px -2px 4px rgba(0, 0, 0, 0.268) !important;
 }
 
 .header1 {
@@ -97,24 +96,23 @@ p.transparent-background {
   padding-left:12px;
   padding-right:12px;
   border-radius:12px;
-
   animation: breathing-glow 3s ease-in-out infinite;
 }
 @keyframes breathing-glow {
   0% {
-    text-shadow:0 0 8px #7a5ff0;
+    text-shadow:0 0 6px #7a5ff0;
   }
   25% {
-    text-shadow:0 0 12px #7a5ff0;
+    text-shadow:0 0 8px #7a5ff0;
   }
   50% {
-    text-shadow:0 0 16px #7a5ff0;
+    text-shadow:0 0 14px #7a5ff0;
   }
   75% {
-    text-shadow:0 0 12px #7a5ff0;
+    text-shadow:0 0 8px #7a5ff0;
   }
   100% {
-    text-shadow:0 0 8px #7a5ff0;
+    text-shadow:0 0 6px #7a5ff0;
   }
 }
 
