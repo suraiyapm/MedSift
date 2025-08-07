@@ -47,7 +47,7 @@ async function createJournalHelper(journal){
 
     return ( 
     <div className="main-content">
-        <h1>Search Medical Journals</h1>
+        <h1 className="header1 frosted-more lighting">Search Medical Journals</h1>
         <form style={{display: 'flex', flexDirection: 'column'}} onSubmit={fetchPapersHelper}>
             <input style={{margin: '1rem'}}name='formInput' type="text" value={journalSearch} placeholder='enter search query' onChange={(e) => setJournalSearch(e.target.value)}></input>
             <button type="submit">Search</button>
@@ -74,8 +74,8 @@ async function createJournalHelper(journal){
                     </div>
                 );
             }) : 
-             <div className="card">
-                <p>Enter a search query to find medical journals</p>    
+             <div className="card frosted-more lighting">
+                <p className="white-text">Enter a search query to find medical journals</p>    
             </div>
         }
     </div>

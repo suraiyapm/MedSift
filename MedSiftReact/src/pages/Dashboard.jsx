@@ -50,21 +50,21 @@ function Dashboard({userId, navigate, setUserId, setUsername}) {
         <>
       <div className='main-content'> 
         <a href="https://github.com/mrDNA219/3140_Project" target="_blank">
-          <img src={medSiftLogo} className="logo" alt="Vite logo" />
+          <img src={medSiftLogo} className="logo lighting" alt="Vite logo"/>
         </a>
-        <h1>Dashboard</h1>
+        <h1 className="header1 lighting">Dashboard</h1>
 
         {/* theme stuff not finished yet! */}
-        <button id="theme-button">Swap</button>
+        {/* <button id="theme-button">Swap</button> */}
 
-        <script>
+        {/* <script>
           const themeButton = document.getElementById('theme-button');
           const body = document.body;
           body.classList.add('light');
           themeButton.addEventListener('click', )
-        </script>
+        </script> */}
 
-        <h2>Saved Journals:</h2>
+        <h2 className="header1 lighting">Saved Journals:</h2>
         {
           usersJournals ? usersJournals.map((jrn) => {
             const {title, authors, journal, pubdate, pages, volume, issue, elocationid, _id} = jrn;

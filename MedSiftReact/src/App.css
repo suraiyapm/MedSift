@@ -12,6 +12,14 @@
   justify-content: space-between;
   padding: 0;
 } */
+
+.margin-top-25px {
+  margin-top: 25px;
+}
+.margin-bottom-25px {
+  margin-bottom: 25px;
+}
+
 .main-content {
   margin-top: 4rem;
   padding-top: 2rem;
@@ -28,11 +36,16 @@
 }
 .bold-light-shadow {
   font-weight:bold;
-  text-shadow: 2px 4px 3px #7a5ff0;
+  /* text-shadow: 2px 4px 3px #7a5ff0; */
+  text-shadow: 1px 1px 2px white;
 }
 .bold-dark-shadow {
   font-weight:bold;
-  text-shadow: 2px 4px 3px #1a1a1a;
+  text-shadow: 0 2px 4px #1a1a1a;
+}
+.bold-orange-shadow {
+  font-weight:bold;
+  text-shadow:1px 1px 2px #9e6117b4;
 }
 
 img.about-photos {
@@ -48,12 +61,22 @@ p.transparent-background {
 .card {
   padding: 2em;
   width: 80%;
-  /* height: 30rem; */
-  background-color: #cfe9f300;
+
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding: 2em;
+  width: 80%;
+  height: 30rem;
+  background-color: #EADEDA;
+  margin: 2rem;
 }
+
 .read-the-docs {
   color: #888888;
-}.nav-button {
+}
+
+.nav-button {
   margin-left: 2rem
 }
 
@@ -74,13 +97,33 @@ p.transparent-background {
   border-bottom:1px groove rgba(0, 0, 0, 0.205) !important;
   /* border:1px solid rgba(0, 0, 0, 0.025) !important; */
 }
+.frosted-more {
+  backdrop-filter:blur(10px) !important;
+  background:rgba(164, 164, 164, 0.436) !important;
+  border-radius:16px !important;
+  border-top:1px groove rgba(108, 108, 108, 0.02) !important;
+  border-left:1px groove rgba(92, 92, 92, 0.02) !important;
+  border-right:1px groove rgba(0, 0, 0, 0.205) !important;
+  border-bottom:1px groove rgba(0, 0, 0, 0.205) !important;
+}
 .lighting {
     box-shadow: /*8px 8px 14px rgba(0, 0, 0, 0.293),
     -8px -8px 20px rgba(255, 255, 255, 0.468),  */
     /* 0 8px 32px rgba(0, 0, 0, 0.956), */
     /* -15px -8px 25px rgba(255, 247, 233, 0.648) #fce7a3, */
-    -15px -8px 45px #fce7a3,
+    -15px -8px 55px #fce7a3,
     8px 6px 16px /*rgba(0, 0, 0, 0.393)*/ #b4711fb4 , /* bottom right */
+    inset 2px 2px 6px rgba(255, 247, 233, 0.484),
+    inset 0 0 12px 15px rgba(255, 255, 255, 0.103), /* (Mostly for me to remember) when shadow has 4 numbers, it's horizontal offset/x, vertical offset/y, blur radius, then SPREAD radius! */
+    inset -2px -2px 4px rgba(0, 0, 0, 0.268) !important;
+}
+.lighting-layer {
+    box-shadow: /*8px 8px 14px rgba(0, 0, 0, 0.293),
+    -8px -8px 20px rgba(255, 255, 255, 0.468),  */
+    /* 0 8px 32px rgba(0, 0, 0, 0.956), */
+    /* -15px -8px 25px rgba(255, 247, 233, 0.648) #fce7a3, */
+    -15px -8px 55px #fcfaf3d0,
+    8px 6px 16px /*rgba(0, 0, 0, 0.393)*/ #726656b4 , /* bottom right */
     inset 2px 2px 6px rgba(255, 247, 233, 0.484),
     inset 0 0 12px 15px rgba(255, 255, 255, 0.103), /* (Mostly for me to remember) when shadow has 4 numbers, it's horizontal offset/x, vertical offset/y, blur radius, then SPREAD radius! */
     inset -2px -2px 4px rgba(0, 0, 0, 0.268) !important;
@@ -114,6 +157,12 @@ p.transparent-background {
   100% {
     text-shadow:0 0 6px #7a5ff0;
   }
+}
+.glow {
+  animation: breathing-glow 3s ease-in-out infinite;
+}
+.bold {
+  font-weight: bold;
 }
 
 #countdown-container {
@@ -213,18 +262,6 @@ p.transparent-background {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-  padding: 2em;
-  width: 80%;
-  height: 30rem;
-  opacity: 0.8;
-  background-color: #EADEDA;
-  margin: 2rem;
 }
 /* #flipbox-container {
   font-size: 36px;
