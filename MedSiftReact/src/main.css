@@ -1,15 +1,24 @@
 
-.oswald-medsift {
+/* .oswald-medsift {
   font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-}
+} */
+ /* https://fonts.googleapis.com/css2?family=Oswald&display=swap */
 
-* {
+/* * {
   font-family: 'oswald-medsift';
-}
+} */
 
+
+.funnel-sans-medsift {
+  font-family: "Funnel Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  /* weight- 300-800 */
+  font-style: normal;
+}
 
 
 :root {
@@ -34,8 +43,8 @@
   background-color:#a9dbd7;
   padding:0.5rem 1rem;
   box-shadow:0 1px 10px rgb(22, 83, 83);
-  font-family:'naviFont', sans-serif;
-  font-weight:bold;
+  font-family:'funnel-sans-medsift', sans-serif;
+  /* font-weight:bold; */
 }
 img.nav-logo {
   cursor: pointer;

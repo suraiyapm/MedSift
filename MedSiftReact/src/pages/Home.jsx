@@ -16,7 +16,8 @@ function Home({navigate, username}) {
           <img src={medSiftLogo} className="logo" alt="Vite logo" />
         </a>
       </div>
-      <h1>Vite+React+MongoDB</h1>
+      {/* <h1>Vite+React+MongoDB</h1> */}
+      <h1 class="header1">MedSift</h1>
       <div className="card">
         <p className="transparent-bkg">
             Welcome to MedSift! This app is designed to be a one-stop-shop for med students to find and aggregate relevant 

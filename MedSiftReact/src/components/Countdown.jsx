@@ -28,9 +28,9 @@ function Countdown({ targetDate }) {
 
   return (
     <>
-    <div>
+    <div id="countdown-container" class="frosted lighting">
      <h1>Countdown to Release</h1>
-      <p>{timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s</p>
+      <p id="countdown-data">{timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s</p>
     </div>
      </>
  );
