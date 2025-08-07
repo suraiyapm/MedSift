@@ -18,8 +18,9 @@ function Navigation({ navigate, userId }) {
         <li><a href="/dashboard">Dashboard</a></li>
         <li><a href="/notes">Notes</a></li>
         <li><a href="/register">Register</a></li>
+
         {
-          userId ? <></> : 
+          userId ? <li><a href="/logout">Logout</a></li>: 
         <li><a href="/login">Login</a></li>
         }
         <li><a href="/about">About</a></li>
