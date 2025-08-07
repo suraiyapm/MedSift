@@ -87,7 +87,7 @@ a:hover {
 
 body {
   background-image: url(https://images.pexels.com/photos/3683041/pexels-photo-3683041.jpeg);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: 100%;
   padding: 0d;
   margin: 0;
