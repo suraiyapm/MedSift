@@ -1,8 +1,8 @@
-import { fetchPubMedPapers, createFullJournal } from "../api";
+import { fetchPubMedPapers } from "../api";
 import { useEffect, useState } from "react";
 import { FullNoteCreator } from "../components";
 
-function Journals({userId}) {
+function Journals({userId, token}) {
 
     const [journals, setJournals] = useState('');
     const [journalSearch, setJournalSearch] = useState('');
@@ -46,7 +46,7 @@ const fetchPapersHelper = async (e) => {
         {
             journals.length ? journals.map((journal) => {
                 return (
-                    <FullNoteCreator key={Math.floor(Math.random() * (100000000 - 0 + 1))} journal={journal} userId={userId}></FullNoteCreator>
+                    <FullNoteCreator key={Math.floor(Math.random() * (100000000 - 0 + 1))} token={token} journal={journal} userId={userId}></FullNoteCreator>
                 );
             }) : <div className="card">
                 <p>Please input a search query to view NCBI journals</p>

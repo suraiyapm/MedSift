@@ -1,10 +1,11 @@
 import { Router } from "express";
 import Journal from "../../database/models/journals.model.js";
+import { jwtAuthorization } from "./jwtAuthorization.js";
+
 const journalsRouter = Router();
 
-journalsRouter.get('/:userId', async (req, res) => {
+journalsRouter.get('/:userId', jwtAuthorization, async (req, res) => {
     const { userId } = req.params;
-    console.log("server userId: ", userId);
     try{
         const usersJournals = await Journal.find({user: userId});
         if(usersJournals){
@@ -18,7 +19,7 @@ journalsRouter.get('/:userId', async (req, res) => {
     }
 });
 
-journalsRouter.post('/', async (req, res) => {
+journalsRouter.post('/', jwtAuthorization, async (req, res) => {
     const journal = req.body;
     const newJournal = new Journal(journal);
     try {
@@ -31,7 +32,7 @@ journalsRouter.post('/', async (req, res) => {
     }
 });
 
-journalsRouter.delete('/:journalId', async (req, res) => {
+journalsRouter.delete('/:journalId', jwtAuthorization, async (req, res) => {
     const {journalId} = req.params;
     try{
         const result = await Journal.findByIdAndDelete(journalId);

@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { createFullJournal } from "../api";
 
-function FullNoteCreator({journal, userId}) {
+function FullNoteCreator({journal, userId, token}) {
 
     const [fullJournalText, setFullJournalText] = useState('');
 
     async function createFullJournalHelper(journal){
-    const result = await createFullJournal(journal);
+    const result = await createFullJournal(token, journal);
     if(!result.message){
         alert('Successfully saved journal');
     } else {

@@ -6,6 +6,7 @@ function Logout({ navigate, setUserId }) {
     const performLogout = async () => {
 
       window.localStorage.removeItem("userId");
+      window.localStorage.removeItem("token");
       setUserId("");
       navigate("/login");
     };

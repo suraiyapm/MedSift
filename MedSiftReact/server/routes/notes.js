@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import Note from '../../database/models/notes.model.js';
+import { jwtAuthorization } from './jwtAuthorization.js';
 
 const notesRouter = Router();
 
@@ -26,25 +27,23 @@ notesRouter.get("/:authorId", async (req, res) => {
         }
 
     } catch (error) {
-        res.send({ succes: false, message: "Error getting author's notes"});
         console.error(error);
+        res.send({ succes: false, message: "Error getting author's notes"});
     }
 });
 
 
-notesRouter.post("/",  async (req, res) => {
+notesRouter.post("/", jwtAuthorization, async (req, res) => {
     const note = req.body;
-    console.log("this is the server before schema applied:", note);
     if(!note.text){
         res.send({ success: false, message: "A note must include text"});
     }
     const newNote = new Note(note);
-    console.log("This is the server after schema applied:", newNote);
     try {
         await newNote.save();
         res.send({ success: true, data: newNote});
     } catch (error){
-        console.log("Error posting note");
+        console.error(error);
         res.send({ success: false, message: "Server error creating a note"});
     }
 });
@@ -65,7 +64,7 @@ notesRouter.patch("/:id", async (req, res) => {
     }
 });
 
-notesRouter.delete("/:id", async (req, res) => {
+notesRouter.delete("/:id", jwtAuthorization, async (req, res) => {
     const {id} = req.params;
     if(!id){
         res.send({ success: false, message: "no id submitted for note"});
@@ -74,8 +73,8 @@ notesRouter.delete("/:id", async (req, res) => {
      const deletedNote = await Note.findByIdAndDelete(id);
      res.send({ success: true, data: deletedNote});
     } catch (error){
-        res.send({ success: false, message: "Server error"});
         console.error(error);
+        res.send({ success: false, message: "Server error"});
     }
 });
 

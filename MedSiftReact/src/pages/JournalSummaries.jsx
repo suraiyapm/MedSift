@@ -1,7 +1,7 @@
 import { fetchPubMedSummaries, createJournal } from "../api";
 import { useEffect, useState } from "react";
 
-function JournalSummaries({userId}) {
+function JournalSummaries({userId, token}) {
     const [journals, setJournals] = useState([]);
     const [journalSearch, setJournalSearch] = useState('');
 
@@ -36,8 +36,8 @@ function transformJournalData(apiData) {
   });
 };
 
-async function createJournalHelper(journal){
-    const result = await createJournal(journal);
+async function createJournalHelper(token, journal){
+    const result = await createJournal(token, journal);
     if(!result.message){
         alert('Successfully saved journal');
     } else {
@@ -69,7 +69,7 @@ async function createJournalHelper(journal){
                     }    
                     <button onClick={(e) => {
                         e.preventDefault();
-                        createJournalHelper({user: userId, ...journal});
+                        createJournalHelper(token, {user: userId, ...journal});
                     }} >Save Journal</button>
                     </div>
                 );

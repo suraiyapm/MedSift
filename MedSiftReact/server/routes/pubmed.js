@@ -30,7 +30,6 @@ pubmedRouter.get("/:queryTerm", async (req, res) => {
             retmax: 10
         })
         const fetchResult = await fetch(`${ncbi_efetch_url}?${summaryParams}`).then(response => response.text());
-        console.log("fetch result: ", fetchResult);
         res.send(fetchResult);
     } catch(error){
         console.error(error);

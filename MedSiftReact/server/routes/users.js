@@ -1,6 +1,7 @@
 import express from 'express';
 import User from '../../database/models/users.model.js';
 import Note from '../../database/models/notes.model.js';
+import  jwt  from 'jsonwebtoken';
 const usersRouter = express.Router();
 
 
@@ -30,7 +31,8 @@ usersRouter.post('/login', async (req, res) => {
     try {
     const userLogin = await User.find({ username: user.username, password: user.password});
     if(userLogin){
-        res.send({ success: true, data: userLogin});
+        const token = jwt.sign({user: user.username}, process.env.JWT_SECRET);
+        res.send({ success: true, data: userLogin, token: token});
     } else {
         res.send({ success: false, message: "No username/password combination in database...please register to login"});
     }
