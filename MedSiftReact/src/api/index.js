@@ -188,4 +188,17 @@ export const deleteFullJournal = async (token, fullJournalId) => {
     } catch (error) {
         console.error(error);
     }
+};
+
+export const updateFullJournal = async (token, fullJournalId, {...newFullJournalText}) => {
+    try {
+        const headers = createHeaders(token);
+        return await fetch(`${base_url}/api/fullJournals/${fullJournalId}`, {
+            method: "PATCH",
+            headers,
+            body: JSON.stringify(newFullJournalText)
+        }).then(response => response.json());
+    } catch (error) {
+        console.error(error);
+    }
 }
