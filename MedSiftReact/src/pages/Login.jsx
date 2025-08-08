@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { loginUser } from "../api";
 
-function Login({navigate, setUserId}) {
+function Login({navigate, setUserId, setToken}) {
     const [loginInfo, setLoginInfo] = useState({
     username: "",
     password: ""
@@ -14,6 +14,8 @@ function Login({navigate, setUserId}) {
       console.log(result);
       setUserId(result.data[0]._id);
       window.localStorage.setItem('userId', result.data[0]._id);
+      setToken(result.token);
+      window.localStorage.setItem('token', result.token);
       navigate('/');
     } else {
       alert(`${result.message}`);

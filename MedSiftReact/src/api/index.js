@@ -6,11 +6,14 @@ const ncbi_esearch_url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.
 const ncbi_efetch_url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcig';
 const ncbi_api_key = '6bb2bc72b70584c3358ab4777c3c9f890408';
 
-function createHeaders()
+function createHeaders(token)
 {
-    return {
+    return token ? {
         'Content-Type': 'application/json',
-      };
+        'Authorization': `Bearer ${token}`,
+      } : {
+        'Content-Type': 'application/json',
+      }
 }
 
 export const getAllNotes = async () => {
@@ -61,9 +64,9 @@ export const loginUser = async ({...loginInfo}) => {
 }
 
 
-export const createNote = async ({...newNote}) => {
+export const createNote = async (token, {...newNote}) => {
     try{
-        const headers = createHeaders();
+        const headers = createHeaders(token);
         return await fetch(`${base_url}/api/notes`, {
             method: 'POST',
             headers,
@@ -104,9 +107,9 @@ export const fetchPubMedSummaries = async (queryTerm) => {
 }
 
 
-export const createJournal = async ({...journal}) => {
+export const createJournal = async (token, {...journal}) => {
     try{
-        const headers = createHeaders();
+        const headers = createHeaders(token);
         return await fetch(`${base_url}/api/journals`, {
             method: 'POST',
             headers,
@@ -117,9 +120,9 @@ export const createJournal = async ({...journal}) => {
     }
 };
 
-export const createFullJournal = async ({...fullJournal}) => {
+export const createFullJournal = async (token, {...fullJournal}) => {
     try {
-        const headers = createHeaders();
+        const headers = createHeaders(token);
         return await fetch(`${base_url}/api/fullJournals`, {
             method: 'POST',
             headers,
@@ -130,9 +133,9 @@ export const createFullJournal = async ({...fullJournal}) => {
     }
 }
 
-export const getAllJournalsByUserId = async (userId) => {
+export const getAllJournalsByUserId = async (token, userId) => {
     try {
-        const headers = createHeaders();
+        const headers = createHeaders(token);
         return await fetch(`${base_url}/api/journals/${userId}`, {
             headers
         }).then(response => response.json());
@@ -141,9 +144,9 @@ export const getAllJournalsByUserId = async (userId) => {
     }
 };
 
-export const getAllUsersFullJournalsByUserId = async (userId) => {
+export const getAllUsersFullJournalsByUserId = async (token, userId) => {
     try {
-        const headers = createHeaders();
+        const headers = createHeaders(token);
         return await fetch(`${base_url}/api/fullJournals/${userId}`, {
             headers
         }).then(response => response.json());
@@ -152,9 +155,9 @@ export const getAllUsersFullJournalsByUserId = async (userId) => {
     }
 }
 
-export const deleteNote = async (noteId) => {
+export const deleteNote = async (token, noteId) => {
     try {
-        const headers = createHeaders();
+        const headers = createHeaders(token);
         return await fetch(`${base_url}/api/notes/${noteId}`, {
             method: 'DELETE',
             headers
@@ -164,9 +167,9 @@ export const deleteNote = async (noteId) => {
     }
 };
 
-export const deleteJournal = async (journalId) => {
+export const deleteJournal = async (token, journalId) => {
     try {
-        const headers = createHeaders();
+        const headers = createHeaders(token);
         return await fetch(`${base_url}/api/journals/${journalId}`, {
              method: 'DELETE', 
              headers}).then(response => response.json());
@@ -175,9 +178,9 @@ export const deleteJournal = async (journalId) => {
     }
 };
 
-export const deleteFullJournal = async (fullJournalId) => {
+export const deleteFullJournal = async (token, fullJournalId) => {
     try {
-        const headers = createHeaders();
+        const headers = createHeaders(token);
         return await fetch(`${base_url}/api/fullJournals/${fullJournalId}`, {
             method: "DELETE",
             headers

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { getAllNotes, getAllNotesByAuthorId, deleteNote} from '../api';        
 import { NoteCreator } from '../components';
 
-function Notes({userId}) {
+function Notes({userId, token}) {
     
     const [notes, setNotes] = useState([]);
  
@@ -16,7 +16,7 @@ function Notes({userId}) {
     };
 
     async function deleteNotesHelper(noteId){
-        const result = await deleteNote(noteId);
+        const result = await deleteNote(token, noteId);
         if(result){
             getNotesHelper();
         } else {
@@ -31,7 +31,7 @@ function Notes({userId}) {
 
     return (
     <>
-        <NoteCreator userId={userId} getNotesHelper={getNotesHelper}></NoteCreator>
+        <NoteCreator token={token} userId={userId} getNotesHelper={getNotesHelper}></NoteCreator>
             {
                 notes.length ? notes.map((note) => 
                 {

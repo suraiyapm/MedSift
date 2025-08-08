@@ -9,10 +9,10 @@ import { Navigation } from "./components"
 
 
 function App() {
+  const [token, setToken] = useState('');
   const [username, setUsername] = useState('');
   const [userId, setUserId] = useState('');
   const navigate = useNavigate();
-  console.log("App userId: ", userId);
  
   async function grabUserIdFromStorage() {
     if(!userId){
@@ -20,24 +20,32 @@ function App() {
     }
   }
 
+  async function persistToken() {
+    const storedToken = window.localStorage.getItem('token');
+    if(storedToken){
+      setToken(storedToken);
+    }
+  }
+
   useEffect(() => {
     grabUserIdFromStorage();
-  }, []);
+    persistToken();
+  }, [token]);
   
   return (
     <> 
     <Navigation navigate={navigate} userId={userId}/>
     <div className='main-content'>
       <Routes>
-        <Route path="/dashboard" element={<Dashboard userId={userId} setUserId={setUserId} navigate={navigate} setUsername={setUsername}/>} />
+        <Route path="/dashboard" element={<Dashboard userId={userId} setUserId={setUserId} token={token} navigate={navigate} setUsername={setUsername}/>} />
         <Route path="/about" element={<About />} />
         <Route path="/" element={<Home navigate={navigate} username={username}/>} />
-        <Route path="/journals" element={<Journals navigate={navigate} userId={userId}/>} />
-        <Route path="/journals_summaries" element={<JournalSummaries navigate={navigate} userId={userId}/>} /> 
-        <Route path="/notes" element={<Notes navigate={navigate} userId={userId}/>} />
+        <Route path="/journals" element={<Journals navigate={navigate} userId={userId} token={token}/>} />
+        <Route path="/journals_summaries" element={<JournalSummaries navigate={navigate} token={token} userId={userId}/>} /> 
+        <Route path="/notes" element={<Notes navigate={navigate} userId={userId} token={token}/> } />
         <Route path="/register" element={<Register navigate={navigate} setUserId={setUserId} setUsername={setUsername}/>} />
-        <Route path="/login" element={<Login navigate={navigate} setUserId={setUserId} />} />
-        <Route path="/logout" element={<Logout navigate={navigate} setUserId={setUserId} />} />
+        <Route path="/login" element={<Login navigate={navigate} setUserId={setUserId} setToken={setToken}/>} />
+        <Route path="/logout" element={<Logout navigate={navigate} setUserId={setUserId} token={token} />} />
         </Routes> 
     </div>
     </>

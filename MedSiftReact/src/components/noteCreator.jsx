@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { createNote } from '../api/index';
 
 
-function NoteCreator({userId, getNotesHelper}) {
+function NoteCreator({userId, getNotesHelper, token}) {
 
     const [newNote, setNewNote] = useState({
         text: "",
@@ -10,7 +10,8 @@ function NoteCreator({userId, getNotesHelper}) {
     });
 
     async function createNoteHelper() {
-      const result = await createNote(newNote);
+        console.log("token near note creator: ", token);
+      const result = await createNote(token, newNote);
       if(result){
          alert("Note successfully created!");
          getNotesHelper();
