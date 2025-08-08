@@ -1,49 +1,40 @@
-import { fetchPubMedPapers, createJournal } from "../api";
+import { fetchPubMedPapers, createFullJournal } from "../api";
 import { useEffect, useState } from "react";
+import { FullNoteCreator } from "../components";
 
 function Journals({userId}) {
-    const [journals, setJournals] = useState([]);
+
+    const [journals, setJournals] = useState('');
     const [journalSearch, setJournalSearch] = useState('');
+
+function splitArticlesStrict(rawText) {
+    const pmidMatches = [...rawText.matchAll(/PMID:\s*\d+/g)];
+    const chunks = rawText.split(/PMID:\s*\d+\s*/);
+    const articles = [];
+    for (let i = 0; i < chunks.length - 1; i++) {
+        let articleBody = chunks[i].trim();
+        let pmidLine = pmidMatches[i][0];
+        const nextChunk = chunks[i + 1];
+        const nextLines = nextChunk.split('\n');
+        const nextStart = nextLines.find(line => /^\d+\.\s/.test(line.trim()));
+        const nextArticleStart = nextStart ? nextStart.trim() : '';
+        const fullArticle = `${articleBody}\n${pmidLine}`;
+        articles.push(fullArticle.trim());
+        if (nextArticleStart) {
+        chunks[i + 1] = nextChunk.slice(nextChunk.indexOf(nextArticleStart));
+        }
+  }
+  return articles;
+}
 
 const fetchPapersHelper = async (e) => {
     e.preventDefault();
     let result = await fetchPubMedPapers(journalSearch);
     if(result){
-        const formattedJournals = transformJournalData(result.result);
-        setJournals(formattedJournals);
+        let formatedArticles = splitArticlesStrict(result);
+        setJournals(formatedArticles);
     }
 };
-
-function transformJournalData(apiData) {
-  const { uids = [] } = apiData;
-
-  return uids.map(uid => {
-    const journal = apiData[uid];
-    return {
-      title: journal.title,
-      authors: journal.authors.map(a => a.name).join(', '),
-      journal: journal.fulljournalname,
-      pubdate: journal.pubdate,
-      doi: (journal.articleids.find(id => id.idtype === 'doi') || {}).value,
-      pages: journal.pages,
-      volume: journal.volume,
-      issue: journal.issue,
-      pubtype: journal.pubtype,
-      language: journal.lang,
-      elocationid: journal.elocationid,
-      uid: journal.uid
-    };
-  });
-};
-
-async function createJournalHelper(journal){
-    const result = await createJournal(journal);
-    if(!result.message){
-        alert('Successfully saved journal');
-    } else {
-        alert(`${result.message}`);
-    }
-} 
 
     return ( 
     <div className="main-content">
@@ -55,27 +46,10 @@ async function createJournalHelper(journal){
         {
             journals.length ? journals.map((journal) => {
                 return (
-                    <div key={journal.uid} className="card">
-                    {
-                        
-                        Object.entries(journal).map(([key, value]) =>  {
-                            return (
-                                <div key={Math.floor(Math.random() * (100000000 - 0 + 1))}>
-                                <h1 style={{fontSize: '26px'}}>{key}</h1>
-                                <p>{value}</p>
-                                </div>
-                            )
-                        })
-                    }    
-                    <button onClick={(e) => {
-                        e.preventDefault();
-                        createJournalHelper({user: userId, ...journal});
-                    }} >Save Journal</button>
-                    </div>
+                    <FullNoteCreator key={Math.floor(Math.random() * (100000000 - 0 + 1))} journal={journal} userId={userId}></FullNoteCreator>
                 );
-            }) : 
-             <div className="card frosted-more lighting">
-                <p className="white-text">Enter a search query to find medical journals</p>    
+            }) : <div className="card frosted-more lighting">
+                <p className="white-text">Please input a search query to view NCBI journals</p>
             </div>
         }
     </div>

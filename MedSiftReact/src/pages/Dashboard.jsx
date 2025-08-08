@@ -1,10 +1,10 @@
 
 import medSiftLogo from '/MedSiftLogo1-SPM.png';
-import { deleteUser, getAllJournalsByUserId, deleteJournal } from '../api';
+import { deleteUser, getAllJournalsByUserId, deleteJournal, getAllUsersFullJournalsByUserId, deleteFullJournal} from '../api';
 import { useEffect, useRef, useState } from 'react';
 
 function Dashboard({userId, navigate, setUserId, setUsername}) {
-
+  const [fullJournals, setFullJournals] = useState([]);
   const [usersJournals, setUsersJournals] = useState([]);
   const hasPageBeenRendered = useRef(false);
 
@@ -29,6 +29,15 @@ function Dashboard({userId, navigate, setUserId, setUsername}) {
     }
     }
   };
+
+  const getAllFullJournalsHelper = async(userId) => {
+    if(userId !== undefined){
+      const result = await getAllUsersFullJournalsByUserId(userId);
+    if(result){
+      setFullJournals(result.data);
+    }
+    }
+  }; 
   
   const deleteJournalsHelper = async(journalId) => {
     const result = await deleteJournal(journalId);
@@ -37,11 +46,21 @@ function Dashboard({userId, navigate, setUserId, setUsername}) {
     } else {
       alert(`${result.message}`);
     }
+  };
 
-  }
+  const deleteFullJournalHelper = async(fullJournalId) => {
+    const result = await deleteFullJournal(fullJournalId);
+    if(result){
+      getAllFullJournalsHelper(userId);
+    } else {
+      alert(`${result.message}`);
+    }
+  };
+
   useEffect(() => {
     if(hasPageBeenRendered.current){
     getAllJournalsHelper(userId);
+    getAllFullJournalsHelper(userId);
     }
     hasPageBeenRendered.current = true;
   }, [userId]);
@@ -63,8 +82,26 @@ function Dashboard({userId, navigate, setUserId, setUsername}) {
           body.classList.add('light');
           themeButton.addEventListener('click', )
         </script> */}
+        <h2>Saved Full Journals</h2>
+        {
+          fullJournals ? fullJournals.map((fullJournal) => {
+            const {_id, text} = fullJournal;
+            return (
+                <div key={_id} className='card'>
+                  <textarea defaultValue={text}></textarea>
+                  <button onClick={(e) => {
+                    e.preventDefault();
+                    deleteFullJournalHelper(_id);
+                  }}>Delete Full Journal</button>
+                </div>
+            )
+          }) : 
+          <div className='card'>
+            <p>No Saved Full Journals</p>
+          </div>
+        }
 
-        <h2 className="header1 lighting">Saved Journals:</h2>
+        <h2 className="header1 lighting">Saved Journal Summaries:</h2>
         {
           usersJournals ? usersJournals.map((jrn) => {
             const {title, authors, journal, pubdate, pages, volume, issue, elocationid, _id} = jrn;

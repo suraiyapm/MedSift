@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router'
 import './App.css'
-import { Journals, Home, Notes, Dashboard, About, Register, Login} from "./pages";
+import { Journals, JournalSummaries, Home, Notes, Dashboard, About, Register, Login, Logout} from "./pages";
 import { Navigation } from "./components"
 
 
@@ -12,6 +12,7 @@ function App() {
   const [username, setUsername] = useState('');
   const [userId, setUserId] = useState('');
   const navigate = useNavigate();
+  console.log("App userId: ", userId);
  
   async function grabUserIdFromStorage() {
     if(!userId){
@@ -32,9 +33,11 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/" element={<Home navigate={navigate} username={username}/>} />
         <Route path="/journals" element={<Journals navigate={navigate} userId={userId}/>} />
+        <Route path="/journals_summaries" element={<JournalSummaries navigate={navigate} userId={userId}/>} /> 
         <Route path="/notes" element={<Notes navigate={navigate} userId={userId}/>} />
         <Route path="/register" element={<Register navigate={navigate} setUserId={setUserId} setUsername={setUsername}/>} />
         <Route path="/login" element={<Login navigate={navigate} setUserId={setUserId} />} />
+        <Route path="/logout" element={<Logout navigate={navigate} setUserId={setUserId} />} />
         </Routes> 
     </div>
     </>

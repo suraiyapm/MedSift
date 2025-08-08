@@ -5,8 +5,11 @@ import { Countdown } from '../components';
 function Home({navigate, username}) { 
 
     return (
-         <>
-        <div className='main-content'> 
+    <>
+      <div className='main-content'> 
+      <a href="https://github.com/mrDNA219/3140_Project" target="_blank">
+                <img src={medSiftLogo} className="logo" alt="Vite logo" />
+              </a>
           {
             username ? <h1>Welcome {username}!</h1> : <></>
           }
@@ -25,7 +28,7 @@ function Home({navigate, username}) {
             We look forward to serving you very soon!
         </p>
       </div>
-        </>
+    </>
     )
 }
 
