@@ -1,15 +1,16 @@
 
 import medSiftLogo from '/MedSiftLogo1-SPM.png';
-import { deleteUser, getAllJournalsByUserId, deleteJournal, getAllUsersFullJournalsByUserId, deleteFullJournal} from '../api';
+import { deleteUser, getAllJournalsByUserId, deleteJournal, getAllUsersFullJournalsByUserId, deleteFullJournal, updateFullJournal} from '../api';
 import { useEffect, useRef, useState } from 'react';
 
 function Dashboard({userId, navigate, setUserId, setUsername, token}) {
   const [fullJournals, setFullJournals] = useState([]);
   const [usersJournals, setUsersJournals] = useState([]);
+  const [newFullJournalText, setNewFullJournalText] = useState('');
   const hasPageBeenRendered = useRef(false);
 
-  const handleDeleteUser = async (event) => {
-    event.preventDefault();
+  const handleDeleteUser = async (e) => {
+    e.preventDefault();
     const result = await deleteUser(userId);
     if(result){
       window.localStorage.removeItem('userId');
@@ -57,6 +58,16 @@ function Dashboard({userId, navigate, setUserId, setUsername, token}) {
     }
   };
 
+  const updateFullJournalHelper = async(token, fullJournalId, updatedText) => {
+    const result = await updateFullJournal(token, fullJournalId, updatedText);
+    if(result) {
+      alert('Succuessfully updated Journal!');
+      getAllFullJournalsHelper(token, userId);
+    } else {
+      alert(`${result.message}`);
+    }
+   }
+
   useEffect(() => {
     if(hasPageBeenRendered.current){
     getAllJournalsHelper(token, userId);
@@ -88,7 +99,14 @@ function Dashboard({userId, navigate, setUserId, setUsername, token}) {
             const {_id, text} = fullJournal;
             return (
                 <div key={_id} className='card'>
-                  <textarea defaultValue={text}></textarea>
+                  <textarea onChange={(e) => {
+                    e.preventDefault();
+                    setNewFullJournalText(e.target.value);
+                  }} defaultValue={text}></textarea>
+                  <button onClick={(e) => {
+                    e.preventDefault();
+                    updateFullJournalHelper(token, _id, {text: newFullJournalText});
+                  }}>Update Journal</button>
                   <button onClick={(e) => {
                     e.preventDefault();
                     deleteFullJournalHelper(token, _id);

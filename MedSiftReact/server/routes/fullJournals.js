@@ -43,6 +43,22 @@ fullJournalsRouter.delete('/:fullJournalId', jwtAuthorization, async (req, res) 
         console.error(error);
         res.send({ success: false, message: "Server error deleting a fullJournal"});
     }
+});
+
+fullJournalsRouter.patch('/:fullJournalId', jwtAuthorization, async (req, res) => {
+    const { fullJournalId } = req.params;
+    const updatedFullJournalText  = req.body;
+    try {
+        const result = await FullJournal.findByIdAndUpdate(fullJournalId, updatedFullJournalText);
+        if(result) {
+            res.send({ success: true});
+        } else {
+            res.send({ success: false, message: "Database error updating fullJournal"});
+        }
+    } catch (error) {
+        console.error(error);
+        res.send({ success: false, message: "Server error updating fullJournal"});
+    }
 })
 
 
