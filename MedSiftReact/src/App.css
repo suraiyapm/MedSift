@@ -1,38 +1,9 @@
-
-/* Miscellaneous Class Stuff */
-/* .navbar {
-  border: 1px solid #4059AD;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background-color: transparent;
-  z-index: 100;
-  width: 100%;
-  max-width: var(--container);
-  justify-content: space-between;
-  padding: 0;
-} */
-
-.margin-top-25px {
-  margin-top: 25px;
-}
-.margin-bottom-25px {
-  margin-bottom: 25px;
-}
-
-.main-content {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  display: flex;
-  place-items: center;
-  flex-direction: column;
-  min-width: 80vw;
-}
-.white-text {
-  color:white;
-}
+/* . Classes ________________________________________________________________ */
 .black-text {
   color:black;
+}
+.bold {
+  font-weight: bold;
 }
 .bold-light-shadow {
   font-weight:bold;
@@ -47,17 +18,6 @@
   font-weight:bold;
   text-shadow:1px 1px 2px #9e6117b4;
 }
-
-img.about-photos {
-  width:40%;
-  height:auto;
-  padding:10px;
-  margin-top:20px;
-  margin-bottom:20px;
-}
-p.transparent-background {
-  background-color: #185c8900;
-}
 .card {
   padding: 2em;
   width: 80%;
@@ -71,22 +31,6 @@ p.transparent-background {
   background-color: #EADEDA;
   margin: 2rem;
 }
-
-.read-the-docs {
-  color: #888888;
-}
-
-.nav-button {
-  margin-left: 2rem
-}
-
-.notes-form {
-  display: flex;
-  flex-direction: column;
-  place-items: center;
-  
-}
-/* KEY THEME STUFF */
 .frosted {
   backdrop-filter:blur(5px) !important;
   background:rgba(199, 199, 199, 0.274) !important;
@@ -105,6 +49,28 @@ p.transparent-background {
   border-left:1px groove rgba(92, 92, 92, 0.02) !important;
   border-right:1px groove rgba(0, 0, 0, 0.205) !important;
   border-bottom:1px groove rgba(0, 0, 0, 0.205) !important;
+}
+.glow {
+  animation: breathing-glow 3s ease-in-out infinite;
+}
+.header1 {
+  font-weight:bold;
+  /* text-shadow:0 2px 12px #7a5ff0; */
+  box-shadow:0 6px 18px #b19750;
+  background-color: #fde7ad;
+  padding-top:8px;
+  padding-bottom:10px;
+  padding-left:12px;
+  padding-right:12px;
+  border-radius:12px;
+  animation: breathing-glow 3s ease-in-out infinite;
+}
+img.about-photos {
+  width:40%;
+  height:auto;
+  padding:10px;
+  margin-top:20px;
+  margin-bottom:20px;
 }
 .lighting {
     box-shadow: /*8px 8px 14px rgba(0, 0, 0, 0.293),
@@ -128,18 +94,114 @@ p.transparent-background {
     inset 0 0 12px 15px rgba(255, 255, 255, 0.103), /* (Mostly for me to remember) when shadow has 4 numbers, it's horizontal offset/x, vertical offset/y, blur radius, then SPREAD radius! */
     inset -2px -2px 4px rgba(0, 0, 0, 0.268) !important;
 }
+.logo {
+  height: 14em;
+  padding: 1em;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  will-change: filter;
+  transition: filter 300ms;
+  background-color:#fbe29d;
+  box-shadow: 0px 2px 16px #bba15b;
+  border-radius:8px;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #185c89aa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+.margin-bottom-25px {
+  margin-bottom: 25px;
+}
+.main-content {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  min-width: 80vw;
+}
+.margin-top-25px {
+  margin-top: 25px;
+}
+.nav-button {
+  margin-left: 2rem
+}
+.notes-form {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.read-the-docs {
+  color: #888888;
+}
+.transparent-background {
+  background-color: #185c8900;
+}
+.white-text {
+  color:white;
+}
 
-.header1 {
+/* # IDs ________________________________________________________________ */
+#about {
+  background-image: linear-gradient(#6663ff,#020509);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color:#ffffff;
+  text-shadow:5px 5px 10px #060f1a;
   font-weight:bold;
-  /* text-shadow:0 2px 12px #7a5ff0; */
-  box-shadow:0 6px 18px #b19750;
-  background-color: #fde7ad;
-  padding-top:8px;
-  padding-bottom:10px;
-  padding-left:12px;
-  padding-right:12px;
-  border-radius:12px;
-  animation: breathing-glow 3s ease-in-out infinite;
+  padding:20px;
+}
+#about-back {
+  background-color: #060f1a;
+  display:flex;
+  place-items:center;
+}
+#countdown-container {
+  color:white;
+  text-shadow: 0 4px 6px #b19750;
+  font-weight:bold;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding-top:12px;
+  padding-bottom:12px;
+  padding-left:25px;
+  padding-right:25px;
+}
+#countdown-data {
+  color:#ff9b8a;
+  text-shadow: 0 6px 6px #ffe499 !important;
+}
+#create-notes-button {
+  margin: 2rem;
+}
+#notes-text-area {
+  margin: 2rem;
+}
+#pic1specific {
+  float:left;
+}
+#pic2specific {
+  float:right;
+}
+#pic3specific {
+  float:left;
+  width:35%;
+}
+#root {
+  max-width: 1000rem;
+  min-width: 100vw;
+  margin: 0;
+  text-align: center;
+}
+
+/* @ Rules ________________________________________________________________ */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 @keyframes breathing-glow {
   0% {
@@ -158,111 +220,14 @@ p.transparent-background {
     text-shadow:0 0 6px #7a5ff0;
   }
 }
-.glow {
-  animation: breathing-glow 3s ease-in-out infinite;
-}
-.bold {
-  font-weight: bold;
-}
-
-#countdown-container {
-  color:white;
-  text-shadow: 0 4px 6px #b19750;
-  font-weight:bold;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  /* box-shadow:0 6px 18px #b19750; */
-  /* background-color: #fde7ad; */
-  /* background:rgba(199, 199, 199, 0.274); */
-  padding-top:12px;
-  padding-bottom:12px;
-  padding-left:25px;
-  padding-right:25px;
-  /* border-radius: 16px; */
-}
-
-#countdown-data {
-  color:#ff9b8a;
-  text-shadow: 0 6px 6px #ffe499 !important;
-  
-}
-
-#create-notes-button {
-  margin: 2rem;
-}
-
-#notes-text-area {
-  margin: 2rem;
-}
-
-.logo {
-  height: 14em;
-  padding: 1em;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  will-change: filter;
-  transition: filter 300ms;
-  background-color:#fbe29d;
-  box-shadow: 0px 2px 16px #bba15b;
-  border-radius:8px;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #185c89aa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-/* .heads-up {
-  display:flex;
-  align-content: flex-start;
-} */
-
-/* Miscellaneous ID Stuff (moving things around at the moment) */
-#pic1specific {
-  float:left;
-}
-#pic2specific {
-  float:right;
-}
-#pic3specific {
-  float:left;
-  width:35%;
-}
-#about {
-  background-image: linear-gradient(#6663ff,#020509);
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color:#ffffff;
-  text-shadow:5px 5px 10px #060f1a;
-  font-weight:bold;
-  padding:20px;
-}
-#about-back {
-  background-color: #060f1a;
-  display:flex;
-  place-items:center;
-}
-#root {
-  max-width: 1000rem;
-  min-width: 100vw;
-  margin: 0;
-  text-align: center;
-}
-
-
-/* Rules */
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
+
+/* maybes ________________________________________________________________ */
+
 /* #flipbox-container {
   font-size: 36px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -308,4 +273,9 @@ p.transparent-background {
   71% {margin-top:0px;}
   99.99% {margin-top:0px;}
   100% {margin-top:-270px;}
+} */
+
+/* .heads-up {
+  display:flex;
+  align-content: flex-start;
 } */
