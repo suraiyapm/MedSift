@@ -1,9 +1,10 @@
 import { Router } from "express";
+import { jwtAuthorization } from "./jwtAuthorization.js";
 import FullJournal from "../../database/models/fullJournal.model.js";
 const fullJournalsRouter = Router();
 
 
-fullJournalsRouter.get('/:userId', async (req, res) => {
+fullJournalsRouter.get('/:userId', jwtAuthorization, async (req, res) => {
     const {userId} = req.params;
     try {
         const usersFullJournals = await FullJournal.find({user: userId});
@@ -17,7 +18,7 @@ fullJournalsRouter.get('/:userId', async (req, res) => {
     }
 });
 
-fullJournalsRouter.post('/', async (req, res) => {
+fullJournalsRouter.post('/', jwtAuthorization, async (req, res) => {
     const fullJournal = req.body;
     const newFullJournal = new FullJournal(fullJournal);
     try {
@@ -29,7 +30,7 @@ fullJournalsRouter.post('/', async (req, res) => {
     }
 });
 
-fullJournalsRouter.delete('/:fullJournalId', async (req, res) => {
+fullJournalsRouter.delete('/:fullJournalId', jwtAuthorization, async (req, res) => {
     const { fullJournalId } = req.params;
     try {
         const result = await FullJournal.findByIdAndDelete(fullJournalId);
@@ -41,6 +42,22 @@ fullJournalsRouter.delete('/:fullJournalId', async (req, res) => {
     } catch (error){
         console.error(error);
         res.send({ success: false, message: "Server error deleting a fullJournal"});
+    }
+});
+
+fullJournalsRouter.patch('/:fullJournalId', jwtAuthorization, async (req, res) => {
+    const { fullJournalId } = req.params;
+    const updatedFullJournalText  = req.body;
+    try {
+        const result = await FullJournal.findByIdAndUpdate(fullJournalId, updatedFullJournalText);
+        if(result) {
+            res.send({ success: true});
+        } else {
+            res.send({ success: false, message: "Database error updating fullJournal"});
+        }
+    } catch (error) {
+        console.error(error);
+        res.send({ success: false, message: "Server error updating fullJournal"});
     }
 })
 

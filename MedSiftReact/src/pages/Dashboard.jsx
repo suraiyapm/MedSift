@@ -1,15 +1,16 @@
 
 import medSiftLogo from '/MedSiftLogo1-SPM.png';
-import { deleteUser, getAllJournalsByUserId, deleteJournal, getAllUsersFullJournalsByUserId, deleteFullJournal} from '../api';
+import { deleteUser, getAllJournalsByUserId, deleteJournal, getAllUsersFullJournalsByUserId, deleteFullJournal, updateFullJournal} from '../api';
 import { useEffect, useRef, useState } from 'react';
 
-function Dashboard({userId, navigate, setUserId, setUsername}) {
+function Dashboard({userId, navigate, setUserId, setUsername, token}) {
   const [fullJournals, setFullJournals] = useState([]);
   const [usersJournals, setUsersJournals] = useState([]);
+  const [newFullJournalText, setNewFullJournalText] = useState('');
   const hasPageBeenRendered = useRef(false);
 
-  const handleDeleteUser = async (event) => {
-    event.preventDefault();
+  const handleDeleteUser = async (e) => {
+    e.preventDefault();
     const result = await deleteUser(userId);
     if(result){
       window.localStorage.removeItem('userId');
@@ -21,46 +22,56 @@ function Dashboard({userId, navigate, setUserId, setUsername}) {
     }
   };
 
-  const getAllJournalsHelper = async(userId) => {
+  const getAllJournalsHelper = async(token, userId) => {
     if(userId !== undefined){
-    const result = await getAllJournalsByUserId(userId);
+    const result = await getAllJournalsByUserId(token, userId);
     if(result){
       setUsersJournals(result.data);
     }
     }
   };
 
-  const getAllFullJournalsHelper = async(userId) => {
+  const getAllFullJournalsHelper = async(token, userId) => {
     if(userId !== undefined){
-      const result = await getAllUsersFullJournalsByUserId(userId);
+      const result = await getAllUsersFullJournalsByUserId(token, userId);
     if(result){
       setFullJournals(result.data);
     }
     }
   }; 
   
-  const deleteJournalsHelper = async(journalId) => {
-    const result = await deleteJournal(journalId);
+  const deleteJournalsHelper = async(token, journalId) => {
+    const result = await deleteJournal(token, journalId);
     if(result){
-        getAllJournalsHelper(userId);
+        getAllJournalsHelper(token, userId);
     } else {
       alert(`${result.message}`);
     }
   };
 
-  const deleteFullJournalHelper = async(fullJournalId) => {
-    const result = await deleteFullJournal(fullJournalId);
+  const deleteFullJournalHelper = async(token, fullJournalId) => {
+    const result = await deleteFullJournal(token, fullJournalId);
     if(result){
-      getAllFullJournalsHelper(userId);
+      getAllFullJournalsHelper(token, userId);
     } else {
       alert(`${result.message}`);
     }
   };
+
+  const updateFullJournalHelper = async(token, fullJournalId, updatedText) => {
+    const result = await updateFullJournal(token, fullJournalId, updatedText);
+    if(result) {
+      alert('Succuessfully updated Journal!');
+      getAllFullJournalsHelper(token, userId);
+    } else {
+      alert(`${result.message}`);
+    }
+   }
 
   useEffect(() => {
     if(hasPageBeenRendered.current){
-    getAllJournalsHelper(userId);
-    getAllFullJournalsHelper(userId);
+    getAllJournalsHelper(token, userId);
+    getAllFullJournalsHelper(token, userId);
     }
     hasPageBeenRendered.current = true;
   }, [userId]);
@@ -88,10 +99,17 @@ function Dashboard({userId, navigate, setUserId, setUsername}) {
             const {_id, text} = fullJournal;
             return (
                 <div key={_id} className='card'>
-                  <textarea defaultValue={text}></textarea>
+                  <textarea onChange={(e) => {
+                    e.preventDefault();
+                    setNewFullJournalText(e.target.value);
+                  }} defaultValue={text}></textarea>
                   <button onClick={(e) => {
                     e.preventDefault();
-                    deleteFullJournalHelper(_id);
+                    updateFullJournalHelper(token, _id, {text: newFullJournalText});
+                  }}>Update Journal</button>
+                  <button onClick={(e) => {
+                    e.preventDefault();
+                    deleteFullJournalHelper(token, _id);
                   }}>Delete Full Journal</button>
                 </div>
             )
@@ -125,7 +143,7 @@ function Dashboard({userId, navigate, setUserId, setUsername}) {
                 <p>{elocationid}</p>
                 <button onClick={(e) => {
                   e.preventDefault();
-                  deleteJournalsHelper(_id);
+                  deleteJournalsHelper(token, _id);
                 }}>Delete Journal</button>
               </div>
             )
