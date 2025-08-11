@@ -22,12 +22,12 @@ function Login({navigate, setUserId}) {
 
   return (
     <div className='main-content'>
-        <div className='card'>
+        <div className='card frosted lighting'>
             <form onSubmit={handleLogin} >
-                <h2>Login</h2>
+                <h2 className="header1 frosted lighting-layer bold-dark-shadow white-text outline rounded">Login</h2>
                 <input type="text" placeholder="Username" value={loginInfo.username} onChange={(e) => setLoginInfo({ ...loginInfo, username: e.target.value})} />
                 <input type="password" placeholder="Password" value={loginInfo.password} onChange={(e) => setLoginInfo({ ...loginInfo, password: e.target.value})} />
-                <button type="submit">Login</button>
+                <button type="submit" className="header1 margin-left-18px rounded lighting-layer outline">Login</button>
             </form>
         </div>
     </div>

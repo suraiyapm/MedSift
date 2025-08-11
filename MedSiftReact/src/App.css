@@ -18,6 +18,9 @@
   font-weight:bold;
   text-shadow:1px 1px 2px #9e6117b4;
 }
+/* .box-hover:hover {
+  box-shadow: 0 0 6px 6px #7a5ff0;
+} */
 .card {
   padding: 2em;
   width: 80%;
@@ -31,27 +34,33 @@
   background-color: #EADEDA;
   margin: 2rem;
 }
+.font-uniformity {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 .frosted {
   backdrop-filter:blur(5px) !important;
   background:rgba(199, 199, 199, 0.274) !important;
   border-radius:16px !important;
-  border-top:1px groove rgba(108, 108, 108, 0.02) !important;
-  border-left:1px groove rgba(92, 92, 92, 0.02) !important;
-  border-right:1px groove rgba(0, 0, 0, 0.205) !important;
-  border-bottom:1px groove rgba(0, 0, 0, 0.205) !important;
+  border-top:1px groove rgba(108, 108, 108, 0.02);
+  border-left:1px groove rgba(92, 92, 92, 0.02);
+  border-right:1px groove rgba(92, 92, 92, 0.02);
+  border-bottom:1px groove rgba(108, 108, 108, 0.02);
   /* border:1px solid rgba(0, 0, 0, 0.025) !important; */
 }
 .frosted-more {
   backdrop-filter:blur(10px) !important;
   background:rgba(164, 164, 164, 0.436) !important;
   border-radius:16px !important;
-  border-top:1px groove rgba(108, 108, 108, 0.02) !important;
-  border-left:1px groove rgba(92, 92, 92, 0.02) !important;
-  border-right:1px groove rgba(0, 0, 0, 0.205) !important;
-  border-bottom:1px groove rgba(0, 0, 0, 0.205) !important;
+  border-top:1px groove rgba(108, 108, 108, 0.02);
+  border-left:1px groove rgba(92, 92, 92, 0.02);
+  border-right:1px groove rgba(92, 92, 92, 0.02);
+  border-bottom:1px groove rgba(108, 108, 108, 0.02);
 }
 .glow {
   animation: breathing-glow 3s ease-in-out infinite;
+}
+.glow-more {
+  animation: breathing-glow-more 3s ease-in-out infinite;
 }
 .header1 {
   font-weight:bold;
@@ -82,6 +91,10 @@ img.about-photos {
     inset 2px 2px 6px rgba(255, 247, 233, 0.484),
     inset 0 0 12px 15px rgba(255, 255, 255, 0.103), /* (Mostly for me to remember) when shadow has 4 numbers, it's horizontal offset/x, vertical offset/y, blur radius, then SPREAD radius! */
     inset -2px -2px 4px rgba(0, 0, 0, 0.268) !important;
+    border-top:1px groove rgba(108, 108, 108, 0.02) !important;
+    border-left:1px groove rgba(92, 92, 92, 0.02) !important;
+    border-right:1px groove rgba(0, 0, 0, 0.205) !important;
+    border-bottom:1px groove rgba(0, 0, 0, 0.205) !important;
 }
 .lighting-layer {
     box-shadow: /*8px 8px 14px rgba(0, 0, 0, 0.293),
@@ -93,6 +106,11 @@ img.about-photos {
     inset 2px 2px 6px rgba(255, 247, 233, 0.484),
     inset 0 0 12px 15px rgba(255, 255, 255, 0.103), /* (Mostly for me to remember) when shadow has 4 numbers, it's horizontal offset/x, vertical offset/y, blur radius, then SPREAD radius! */
     inset -2px -2px 4px rgba(0, 0, 0, 0.268) !important;
+    border-top:1px groove rgba(108, 108, 108, 0.02) !important;
+    border-left:1px groove rgba(92, 92, 92, 0.02) !important;
+    border-right:1px groove rgba(0, 0, 0, 0.205) !important;
+    border-bottom:1px groove rgba(0, 0, 0, 0.205) !important;
+
 }
 .logo {
   height: 14em;
@@ -111,9 +129,6 @@ img.about-photos {
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
-.margin-bottom-25px {
-  margin-bottom: 25px;
-}
 .main-content {
   margin-top: 4rem;
   padding-top: 2rem;
@@ -121,6 +136,12 @@ img.about-photos {
   place-items: center;
   flex-direction: column;
   min-width: 80vw;
+}
+.margin-bottom-25px {
+  margin-bottom: 25px;
+}
+.margin-left-18px {
+  margin-left: 18px;
 }
 .margin-top-25px {
   margin-top: 25px;
@@ -133,8 +154,28 @@ img.about-photos {
   flex-direction: column;
   place-items: center;
 }
+.outline {
+  --outlineColor: rgba(0, 0, 0, 0.091);
+  text-shadow:
+    1px 1px 0 var(--outlineColor),
+    1px -1px 0 var(--outlineColor),
+    -1px 1px 0 var(--outlineColor),
+    -1px -1px 0 var(--outlineColor);
+}
+.padding1 {
+  padding:10px !important;
+}
+.padding2 {
+  padding:20px !important;
+}
 .read-the-docs {
   color: #888888;
+}
+.rounded {
+  border-radius:40px !important;
+}
+.spacer1 {
+  margin:20px;
 }
 .transparent-background {
   background-color: #185c8900;
@@ -173,6 +214,11 @@ img.about-photos {
 }
 #create-notes-button {
   margin: 2rem;
+  font-weight:600;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
+  background-image: linear-gradient(#fcf1d1, #b19750);
+  border: 5px solid #9d8568b4;
 }
 #notes-text-area {
   margin: 2rem;
@@ -187,15 +233,57 @@ img.about-photos {
   float:left;
   width:35%;
 }
+#regi-password, #regi-username {
+  background-color:#39342e;
+}
+#regi-sub {
+  /* background-image:radial-gradient(circle, #b19750, #6c5e39); */
+  border:1px solid rgba(70, 50, 30, 0.001);
+  margin-left:10px;
+}
+#regi-sub:hover {
+  box-shadow:0 0 6px 6px black;
+}
 #root {
   max-width: 1000rem;
   min-width: 100vw;
   margin: 0;
   text-align: center;
 }
+#spinny-logo {
+  width:15%;
+  height:auto;
+  animation: logo-spin 3s ease-in-out infinite;
+}
+#spinny-logo:hover {
+  animation: rapid-spin 1s linear infinite;
+}
 
 /* @ Rules ________________________________________________________________ */
 @keyframes logo-spin {
+  /* from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  } */
+   0% {
+    transform: rotate(-40deg);
+   }
+   25% {
+    transform: rotate(0deg);
+   }
+   50% {
+    transform: rotate(40deg);
+   }
+   75% {
+    transform: rotate(0deg);
+   }
+   100% {
+    transform: rotate(-40deg);
+   }
+}
+@keyframes rapid-spin {
   from {
     transform: rotate(0deg);
   }
@@ -218,6 +306,28 @@ img.about-photos {
   }
   100% {
     text-shadow:0 0 6px #7a5ff0;
+  }
+}
+@keyframes breathing-glow-more { /* for my own future reference, text-shadow is different from box-shadow, as it does not support a spread-radius value. */
+  0% {
+    text-shadow:0 0 6px #7a5ff0,
+    0 0 12px #7a5ff0;
+  }
+  25% {
+    text-shadow:0 0 8px #7a5ff0,
+    0 0 16px #7a5ff0;
+  }
+  50% {
+    text-shadow:0 0 12px #7a5ff0,
+    0 0 28px #7a5ff0;
+  }
+  75% {
+    text-shadow:0 0 8px #7a5ff0,
+    0 0 16px #7a5ff0;
+  }
+  100% {
+    text-shadow:0 0 6px #7a5ff0,
+    0 0 12px #7a5ff0;
   }
 }
 @media (prefers-reduced-motion: no-preference) {

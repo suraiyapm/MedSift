@@ -38,10 +38,10 @@ const fetchPapersHelper = async (e) => {
 
     return ( 
     <div className="main-content">
-        <h1 className="header1 frosted-more lighting">Search Medical Journals</h1>
+        <h1 className="header1 frosted lighting">Search Medical Journals</h1>
         <form style={{display: 'flex', flexDirection: 'column'}} onSubmit={fetchPapersHelper}>
             <input style={{margin: '1rem'}}name='formInput' type="text" value={journalSearch} placeholder='enter search query' onChange={(e) => setJournalSearch(e.target.value)}></input>
-            <button type="submit">Search</button>
+            <button type="submit" className="header1 lighting outline bold-dark-shadow">Search</button>
         </form>
         {
             journals.length ? journals.map((journal) => {
@@ -49,7 +49,7 @@ const fetchPapersHelper = async (e) => {
                     <FullNoteCreator key={Math.floor(Math.random() * (100000000 - 0 + 1))} journal={journal} userId={userId}></FullNoteCreator>
                 );
             }) : <div className="card frosted-more lighting">
-                <p className="white-text">Please input a search query to view NCBI journals</p>
+                <p className="white-text outline">Please input a search query to view NCBI journals</p>
             </div>
         }
     </div>

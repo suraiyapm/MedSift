@@ -27,10 +27,10 @@ function NoteCreator({userId, getNotesHelper}) {
     return (
         <>
         <div className='main-content'>
-            <h2>Note Creator</h2>
+            <h2 className="bold-dark-shadow glow rounded padding2 lighting">Note Creator</h2>
             <form className='notes-form' onSubmit={handleSubmit} >
-                <textarea id='notes-text-area' type="text" placeholder='Enter note text here' value={newNote.text} onChange={(e) => setNewNote({ text: e.target.value, author: userId})} />
-                <button id='create-notes-button' type="submit">Create Note</button>
+                <textarea id='notes-text-area' type="text" placeholder='Start typing...' value={newNote.text} onChange={(e) => setNewNote({ text: e.target.value, author: userId})} />
+                <button id='create-notes-button' className="outline" type="submit">Create Note</button>
             </form>
         </div>        
         </>

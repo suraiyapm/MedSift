@@ -69,7 +69,7 @@ function Dashboard({userId, navigate, setUserId, setUsername}) {
         <>
       <div className='main-content'> 
         <a href="https://github.com/mrDNA219/3140_Project" target="_blank">
-          <img src={medSiftLogo} className="logo lighting" alt="Vite logo"/>
+          <img src={medSiftLogo} className="logo lighting rounded" alt="Vite logo"/>
         </a>
         <h1 className="header1 lighting">Dashboard</h1>
 
@@ -82,7 +82,7 @@ function Dashboard({userId, navigate, setUserId, setUsername}) {
           body.classList.add('light');
           themeButton.addEventListener('click', )
         </script> */}
-        <h2>Saved Full Journals</h2>
+        <h2 className="glow bold-dark-shadow frosted padding1">Saved Full Journals</h2>
         {
           fullJournals ? fullJournals.map((fullJournal) => {
             const {_id, text} = fullJournal;
@@ -100,13 +100,13 @@ function Dashboard({userId, navigate, setUserId, setUsername}) {
             <p>No Saved Full Journals</p>
           </div>
         }
-
+        <div className="spacer1"/>
         <h2 className="header1 lighting">Saved Journal Summaries:</h2>
         {
           usersJournals ? usersJournals.map((jrn) => {
             const {title, authors, journal, pubdate, pages, volume, issue, elocationid, _id} = jrn;
             return (
-              <div key={_id} className='card'>
+              <div key={_id} className='card frosted-more lighting rounded'>
                 <h2>Title</h2>
                 <p>{title}</p>
                 <h2>Authors</h2>
@@ -130,7 +130,7 @@ function Dashboard({userId, navigate, setUserId, setUsername}) {
               </div>
             )
           }) : 
-          <div className='card'>
+          <div className='card frosted-more lighting rounded'>
             <p>No Saved Journals</p>
           </div>
         }

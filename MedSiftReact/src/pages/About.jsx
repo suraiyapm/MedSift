@@ -8,7 +8,7 @@ function About() {
     <>
       <div className='main-content'>
         <a href="https://github.com/mrDNA219/3140_Project" target="_blank">
-          <img src={medSiftLogo} className="logo" alt="Vite logo" />
+          <img src={medSiftLogo} className="logo rounded lighting" alt="Vite logo" />
         </a>
       </div>
       <div id="about-back" className="frosted lighting">

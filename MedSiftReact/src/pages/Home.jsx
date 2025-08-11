@@ -8,16 +8,17 @@ function Home({navigate, username}) {
     <>
       <div className='main-content'> 
       <a href="https://github.com/mrDNA219/3140_Project" target="_blank">
-                <img src={medSiftLogo} className="logo" alt="Vite logo" />
+                <img src={medSiftLogo} className="logo rounded lighting" alt="Vite logo" />
               </a>
           {
             username ? <h1>Welcome {username}!</h1> : <></>
           }
           <Countdown targetDate="2025-08-19T00:00:00" />
-          
-        <a href="https://github.com/mrDNA219/3140_Project" target="_blank">
-          <img src={medSiftLogo} className="logo frosted lighting" alt="Vite logo" />
+          <div className="spacer1"/>
+        <a href="/about">
+          <img src={medSiftLogo} id="spinny-logo" className="logo frosted rounded" alt="Vite logo" />
         </a>
+        <div className="spacer1"/>
       </div>
       <h1 class="header1 lighting frosted">MedSift</h1>
       <div className="card frosted-more lighting">

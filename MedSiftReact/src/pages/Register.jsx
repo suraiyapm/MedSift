@@ -26,10 +26,10 @@ function Register({navigate, setUserId, setUsername}) {
     <div className='main-content'>
         <div className='card frosted lighting'>
             <form onSubmit={handleRegister} >
-                <h2 className="header1 white-text lighting margin-bottom-25px">Register</h2>
-                <input type="text" placeholder="Username" value={newUser.username} onChange={(e) => setNewUser({ ...newUser, username: e.target.value})} />
-                <input type="password" placeholder="Password" value={newUser.password} onChange={(e) => setNewUser({ ...newUser, password: e.target.value})} />
-                <button type="submit" className="lighting margin-top-25px header1 white-text bold-dark-shadow">Register</button>
+                <h2 className="header1 white-text lighting-layer margin-bottom-25px">Register</h2>
+                <input type="text" id="regi-username" placeholder="Username" value={newUser.username} onChange={(e) => setNewUser({ ...newUser, username: e.target.value})} />
+                <input type="password" id="regi-password" placeholder="Password" value={newUser.password} onChange={(e) => setNewUser({ ...newUser, password: e.target.value})} />
+                <button type="submit" id="regi-sub" className="rounded bold outline frosted-more lighting-layer">Register</button>
             </form>
         </div>
     </div>
