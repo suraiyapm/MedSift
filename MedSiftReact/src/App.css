@@ -1,17 +1,134 @@
-
-/* Miscellaneous Class Stuff */
-/* .navbar {
-  border: 1px solid #4059AD;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background-color: transparent;
-  z-index: 100;
-  width: 100%;
-  max-width: var(--container);
-  justify-content: space-between;
-  padding: 0;
+/* . Classes ________________________________________________________________ */
+.black-text {
+  color:black;
+}
+.bold {
+  font-weight: bold;
+}
+.bold-light-shadow {
+  font-weight:bold;
+  /* text-shadow: 2px 4px 3px #7a5ff0; */
+  text-shadow: 1px 1px 2px white;
+}
+.bold-dark-shadow {
+  font-weight:bold;
+  text-shadow: 0 2px 4px #1a1a1a;
+}
+.bold-orange-shadow {
+  font-weight:bold;
+  text-shadow:1px 1px 2px #9e6117b4;
+}
+/* .box-hover:hover {
+  box-shadow: 0 0 6px 6px #7a5ff0;
 } */
+.card {
+  padding: 2em;
+  width: 80%;
+
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding: 2em;
+  width: 80%;
+  height: 30rem;
+  background-color: #EADEDA;
+  margin: 2rem;
+}
+.font-uniformity {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.frosted {
+  backdrop-filter:blur(5px) !important;
+  background:rgba(199, 199, 199, 0.274) !important;
+  border-radius:16px !important;
+  border-top:1px groove rgba(108, 108, 108, 0.02);
+  border-left:1px groove rgba(92, 92, 92, 0.02);
+  border-right:1px groove rgba(92, 92, 92, 0.02);
+  border-bottom:1px groove rgba(108, 108, 108, 0.02);
+  /* border:1px solid rgba(0, 0, 0, 0.025) !important; */
+}
+.frosted-more {
+  backdrop-filter:blur(10px) !important;
+  background:rgba(164, 164, 164, 0.436) !important;
+  border-radius:16px !important;
+  border-top:1px groove rgba(108, 108, 108, 0.02);
+  border-left:1px groove rgba(92, 92, 92, 0.02);
+  border-right:1px groove rgba(92, 92, 92, 0.02);
+  border-bottom:1px groove rgba(108, 108, 108, 0.02);
+}
+.glow {
+  animation: breathing-glow 3s ease-in-out infinite;
+}
+.glow-more {
+  animation: breathing-glow-more 3s ease-in-out infinite;
+}
+.header1 {
+  font-weight:bold;
+  /* text-shadow:0 2px 12px #7a5ff0; */
+  box-shadow:0 6px 18px #b19750;
+  background-color: #fde7ad;
+  padding-top:8px;
+  padding-bottom:10px;
+  padding-left:12px;
+  padding-right:12px;
+  border-radius:12px;
+  animation: breathing-glow 3s ease-in-out infinite;
+}
+img.about-photos {
+  width:40%;
+  height:auto;
+  padding:10px;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+.lighting {
+    box-shadow: /*8px 8px 14px rgba(0, 0, 0, 0.293),
+    -8px -8px 20px rgba(255, 255, 255, 0.468),  */
+    /* 0 8px 32px rgba(0, 0, 0, 0.956), */
+    /* -15px -8px 25px rgba(255, 247, 233, 0.648) #fce7a3, */
+    -15px -8px 55px #fce7a3,
+    8px 6px 16px /*rgba(0, 0, 0, 0.393)*/ #b4711fb4 , /* bottom right */
+    inset 2px 2px 6px rgba(255, 247, 233, 0.484),
+    inset 0 0 12px 15px rgba(255, 255, 255, 0.103), /* (Mostly for me to remember) when shadow has 4 numbers, it's horizontal offset/x, vertical offset/y, blur radius, then SPREAD radius! */
+    inset -2px -2px 4px rgba(0, 0, 0, 0.268) !important;
+    border-top:1px groove rgba(108, 108, 108, 0.02) !important;
+    border-left:1px groove rgba(92, 92, 92, 0.02) !important;
+    border-right:1px groove rgba(0, 0, 0, 0.205) !important;
+    border-bottom:1px groove rgba(0, 0, 0, 0.205) !important;
+}
+.lighting-layer {
+    box-shadow: /*8px 8px 14px rgba(0, 0, 0, 0.293),
+    -8px -8px 20px rgba(255, 255, 255, 0.468),  */
+    /* 0 8px 32px rgba(0, 0, 0, 0.956), */
+    /* -15px -8px 25px rgba(255, 247, 233, 0.648) #fce7a3, */
+    -15px -8px 55px #fcfaf3d0,
+    8px 6px 16px /*rgba(0, 0, 0, 0.393)*/ #726656b4 , /* bottom right */
+    inset 2px 2px 6px rgba(255, 247, 233, 0.484),
+    inset 0 0 12px 15px rgba(255, 255, 255, 0.103), /* (Mostly for me to remember) when shadow has 4 numbers, it's horizontal offset/x, vertical offset/y, blur radius, then SPREAD radius! */
+    inset -2px -2px 4px rgba(0, 0, 0, 0.268) !important;
+    border-top:1px groove rgba(108, 108, 108, 0.02) !important;
+    border-left:1px groove rgba(92, 92, 92, 0.02) !important;
+    border-right:1px groove rgba(0, 0, 0, 0.205) !important;
+    border-bottom:1px groove rgba(0, 0, 0, 0.205) !important;
+
+}
+.logo {
+  height: 14em;
+  padding: 1em;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  will-change: filter;
+  transition: filter 300ms;
+  background-color:#fbe29d;
+  box-shadow: 0px 2px 16px #bba15b;
+  border-radius:8px;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #185c89aa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
 .main-content {
   margin-top: 4rem;
   padding-top: 2rem;
@@ -20,86 +137,54 @@
   flex-direction: column;
   min-width: 80vw;
 }
-.white-text {
-  color:white;
+.margin-bottom-25px {
+  margin-bottom: 25px;
 }
-.black-text {
-  color:black;
+.margin-left-18px {
+  margin-left: 18px;
 }
-.bold-light-shadow {
-  font-weight:bold;
-  text-shadow: 2px 4px 3px #7a5ff0;
+.margin-top-25px {
+  margin-top: 25px;
 }
-.bold-dark-shadow {
-  font-weight:bold;
-  text-shadow: 2px 4px 3px #1a1a1a;
-}
-
-img.about-photos {
-  width:40%;
-  height:auto;
-  padding:10px;
-  margin-top:20px;
-  margin-bottom:20px;
-}
-p.transparent-background {
-  background-color: #185c8900;
-}
-.card {
-  padding: 2em;
-  width: 80%;
-  /* height: 30rem; */
-  background-color: #cfe9f300;
-}
-.read-the-docs {
-  color: #888888;
-}.nav-button {
+.nav-button {
   margin-left: 2rem
 }
-
 .notes-form {
   display: flex;
   flex-direction: column;
   place-items: center;
-  
+}
+.outline {
+  --outlineColor: rgba(0, 0, 0, 0.091);
+  text-shadow:
+    1px 1px 0 var(--outlineColor),
+    1px -1px 0 var(--outlineColor),
+    -1px 1px 0 var(--outlineColor),
+    -1px -1px 0 var(--outlineColor);
+}
+.padding1 {
+  padding:10px !important;
+}
+.padding2 {
+  padding:20px !important;
+}
+.read-the-docs {
+  color: #888888;
+}
+.rounded {
+  border-radius:40px !important;
+}
+.spacer1 {
+  margin:20px;
+}
+.transparent-background {
+  background-color: #185c8900;
+}
+.white-text {
+  color:white;
 }
 
-#create-notes-button {
-  margin: 2rem;
-}
-
-#notes-text-area {
-  margin: 2rem;
-}
-
-.logo {
-  height: 14em;
-  padding: 1em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #185c89aa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-/* .heads-up {
-  display:flex;
-  align-content: flex-start;
-} */
-
-/* Miscellaneous ID Stuff (moving things around at the moment) */
-#pic1specific {
-  float:left;
-}
-#pic2specific {
-  float:right;
-}
-#pic3specific {
-  float:left;
-  width:35%;
-}
+/* # IDs ________________________________________________________________ */
 #about {
   background-image: linear-gradient(#6663ff,#020509);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -113,16 +198,92 @@ p.transparent-background {
   display:flex;
   place-items:center;
 }
+#countdown-container {
+  color:white;
+  text-shadow: 0 4px 6px #b19750;
+  font-weight:bold;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding-top:12px;
+  padding-bottom:12px;
+  padding-left:25px;
+  padding-right:25px;
+}
+#countdown-data {
+  color:#ff9b8a;
+  text-shadow: 0 6px 6px #ffe499 !important;
+}
+#create-notes-button {
+  margin: 2rem;
+  font-weight:600;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
+  background-image: linear-gradient(#fcf1d1, #b19750);
+  border: 5px solid #9d8568b4;
+}
+#notes-text-area {
+  margin: 2rem;
+}
+#pic1specific {
+  float:left;
+}
+#pic2specific {
+  float:right;
+}
+#pic3specific {
+  float:left;
+  width:35%;
+}
+#regi-password, #regi-username {
+  background-color:#39342e;
+}
+#regi-sub {
+  /* background-image:radial-gradient(circle, #b19750, #6c5e39); */
+  border:1px solid rgba(70, 50, 30, 0.001);
+  margin-left:10px;
+}
+#regi-sub:hover {
+  box-shadow:0 0 6px 6px black;
+}
 #root {
   max-width: 1000rem;
   min-width: 100vw;
   margin: 0;
   text-align: center;
 }
+#spinny-logo {
+  width:15%;
+  height:auto;
+  animation: logo-spin 3s ease-in-out infinite;
+}
+#spinny-logo:hover {
+  animation: rapid-spin 1s linear infinite;
+}
 
-
-/* Rules */
+/* @ Rules ________________________________________________________________ */
 @keyframes logo-spin {
+  /* from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  } */
+   0% {
+    transform: rotate(-40deg);
+   }
+   25% {
+    transform: rotate(0deg);
+   }
+   50% {
+    transform: rotate(40deg);
+   }
+   75% {
+    transform: rotate(0deg);
+   }
+   100% {
+    transform: rotate(-40deg);
+   }
+}
+@keyframes rapid-spin {
   from {
     transform: rotate(0deg);
   }
@@ -130,24 +291,53 @@ p.transparent-background {
     transform: rotate(360deg);
   }
 }
-
+@keyframes breathing-glow {
+  0% {
+    text-shadow:0 0 6px #7a5ff0;
+  }
+  25% {
+    text-shadow:0 0 8px #7a5ff0;
+  }
+  50% {
+    text-shadow:0 0 14px #7a5ff0;
+  }
+  75% {
+    text-shadow:0 0 8px #7a5ff0;
+  }
+  100% {
+    text-shadow:0 0 6px #7a5ff0;
+  }
+}
+@keyframes breathing-glow-more { /* for my own future reference, text-shadow is different from box-shadow, as it does not support a spread-radius value. */
+  0% {
+    text-shadow:0 0 6px #7a5ff0,
+    0 0 12px #7a5ff0;
+  }
+  25% {
+    text-shadow:0 0 8px #7a5ff0,
+    0 0 16px #7a5ff0;
+  }
+  50% {
+    text-shadow:0 0 12px #7a5ff0,
+    0 0 28px #7a5ff0;
+  }
+  75% {
+    text-shadow:0 0 8px #7a5ff0,
+    0 0 16px #7a5ff0;
+  }
+  100% {
+    text-shadow:0 0 6px #7a5ff0,
+    0 0 12px #7a5ff0;
+  }
+}
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-  padding: 2em;
-  width: 80%;
-  height: 30rem;
-  opacity: 0.8;
-  background-color: #EADEDA;
-  margin: 2rem;
-}
+/* maybes ________________________________________________________________ */
+
 /* #flipbox-container {
   font-size: 36px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -193,4 +383,9 @@ p.transparent-background {
   71% {margin-top:0px;}
   99.99% {margin-top:0px;}
   100% {margin-top:-270px;}
+} */
+
+/* .heads-up {
+  display:flex;
+  align-content: flex-start;
 } */
