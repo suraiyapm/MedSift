@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { loginUser } from "../api";
 
-function Login({navigate, setUserId, setToken}) {
+function Login({navigate, setUserId, setToken, setUsername}) {
     const [loginInfo, setLoginInfo] = useState({
     username: "",
     password: ""
@@ -16,6 +16,7 @@ function Login({navigate, setUserId, setToken}) {
       window.localStorage.setItem('userId', result.data[0]._id);
       setToken(result.token);
       window.localStorage.setItem('token', result.token);
+      setUsername(result.data[0].username);
       navigate('/');
     } else {
       alert(`${result.message}`);
@@ -26,7 +27,6 @@ function Login({navigate, setUserId, setToken}) {
     <div className='main-content'>
         <div className='card frosted lighting'>
             <form onSubmit={handleLogin} >
-                <h2 className="header1 frosted lighting-layer bold-dark-shadow white-text outline rounded">Login</h2>
                 <input type="text" placeholder="Username" value={loginInfo.username} onChange={(e) => setLoginInfo({ ...loginInfo, username: e.target.value})} />
                 <input type="password" placeholder="Password" value={loginInfo.password} onChange={(e) => setLoginInfo({ ...loginInfo, password: e.target.value})} />
                 <button type="submit" className="header1 margin-left-18px rounded lighting-layer outline">Login</button>
