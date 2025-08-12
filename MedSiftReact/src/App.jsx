@@ -34,7 +34,7 @@ function App() {
   
   return (
     <> 
-    <Navigation navigate={navigate} userId={userId}/>
+    <Navigation navigate={navigate} userId={userId} token={token}/>
     <div className='main-content'>
       <Routes>
         <Route path="/dashboard" element={<Dashboard userId={userId} setUserId={setUserId} token={token} navigate={navigate} setUsername={setUsername}/>} />
@@ -44,7 +44,7 @@ function App() {
         <Route path="/journals_summaries" element={<JournalSummaries navigate={navigate} token={token} userId={userId}/>} /> 
         <Route path="/notes" element={<Notes navigate={navigate} userId={userId} token={token}/> } />
         <Route path="/register" element={<Register navigate={navigate} setUserId={setUserId} setUsername={setUsername}/>} />
-        <Route path="/login" element={<Login navigate={navigate} setUserId={setUserId} setToken={setToken}/>} />
+        <Route path="/login" element={<Login navigate={navigate} setUserId={setUserId} setToken={setToken} setUsername={setUsername}/>} />
         <Route path="/logout" element={<Logout navigate={navigate} setUserId={setUserId} token={token} />} />
         </Routes> 
     </div>
