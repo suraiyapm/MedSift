@@ -44,7 +44,7 @@ textarea {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .frosted {
-  backdrop-filter:blur(5px) !important;
+  backdrop-filter:blur(2px) !important;
   background:#697fe18c !important;
   border-radius:16px !important;
   border-top:1px groove rgba(108, 108, 108, 0.02);
@@ -54,7 +54,7 @@ textarea {
   /* border:1px solid rgba(0, 0, 0, 0.025) !important; */
 }
 .frosted-more {
-  backdrop-filter:blur(10px) !important;
+  backdrop-filter:blur(3px) !important;
   background:#697fe19b !important;
   border-radius:16px !important;
   border-top:1px groove rgba(108, 108, 108, 0.02);
@@ -78,7 +78,8 @@ textarea {
   padding-left:12px;
   padding-right:12px;
   border-radius:12px;
-  animation: breathing-glow 3s ease-in-out infinite;
+  /* animation: breathing-glow 3s ease-in-out infinite; */
+  font-size:1.2em;
 }
 img.about-photos {
   width:40%;
@@ -95,8 +96,8 @@ img.about-photos {
     -15px -8px 55px var(--light),
     8px 6px 16px /*rgba(0, 0, 0, 0.393)*/ var(--shadow) , /* bottom right */
     inset 2px 2px 6px #3e2ca52e,
-    inset 0 0 12px 15px rgba(255, 255, 255, 0.103), /* (Mostly for me to remember) when shadow has 4 numbers, it's horizontal offset/x, vertical offset/y, blur radius, then SPREAD radius! */
-    inset -2px -2px 4px rgba(0, 0, 0, 0.268) !important;
+    inset 0 0 12px 15px rgba(202, 229, 245, 0.035), /* (Mostly for me to remember) when shadow has 4 numbers, it's horizontal offset/x, vertical offset/y, blur radius, then SPREAD radius! */
+    inset -2px -2px 4px rgba(14, 12, 25, 0.268) !important;
     border-top:1px groove rgba(108, 108, 108, 0.02) !important;
     border-left:1px groove rgba(92, 92, 92, 0.02) !important;
     border-right:1px groove rgba(0, 0, 0, 0.205) !important;
