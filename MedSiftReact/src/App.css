@@ -28,7 +28,7 @@ textarea {
 } */
 .card {
   padding: 2em;
-  border-radius: 39px;
+  /* border-radius: 39px; */
   background: #667eea;
   box-shadow:  21px 21px 37px var(--boxShadow),
               -21px -21px 37px var(--boxLight);
@@ -77,7 +77,7 @@ textarea {
   padding-bottom:10px;
   padding-left:12px;
   padding-right:12px;
-  border-radius:12px;
+  /* border-radius:12px; */
   /* animation: breathing-glow 3s ease-in-out infinite; */
   font-size:1.2em;
 }
@@ -225,8 +225,10 @@ img.about-photos {
   font-weight:600;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   
-  background-image: linear-gradient(#fcf1d1, #b19750);
-  border: 5px solid #9d8568b4;
+  background-image: linear-gradient(#d1fafc, #5250b1);
+  border: 5px solid var(--shadow);
+  /* background-image: linear-gradient(#fcf1d1, #b19750);
+  border: 5px solid #9d8568b4; */
 }
 #notes-text-area {
   margin: 2rem;

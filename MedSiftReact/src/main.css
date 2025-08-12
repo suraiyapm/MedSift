@@ -158,7 +158,7 @@ img.nav-logo {
   background-image: radial-gradient(#e0d2a6, #cc9e65b4);
   border-style:double;
   border:4px solid var(--notes_border);
-  border-radius:10px;
+  /* border-radius:10px; */
   padding:5px;
   font-weight:600;
   color:white;
