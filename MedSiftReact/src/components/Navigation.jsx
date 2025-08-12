@@ -1,30 +1,28 @@
 
 function Navigation({ navigate, userId }) {
   return (
-    <nav className="nav-container">
-      <div className="nav-logo" onClick={() => navigate("/")}>
+    <nav className="navbar">
+      <div className="nav-container">
         <img
           src="/MedSiftLogo1-SPM.png"
-          width="60"
-          height="60"
-          className="d-inline-block align-top"
+          className="logo-icon"
           alt="Logo"
         />
-      </div>
-      <ul className = "navi-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/journals">Journals</a></li> 
-        <li><a href="/journals_summaries">Journal Summaries</a></li>
-        <li><a href="/dashboard">Dashboard</a></li>
-        <li><a href="/notes">Notes</a></li>
-        <li><a href="/register">Register</a></li>
+      <ul className="nav-menu">
+        <li className="nav-item"><a className='nav-link active'href="/">Home</a></li>
+        <li className="nav-item"><a className='nav-link' href="/journals">Journals</a></li> 
+        <li className="nav-item"><a className='nav-link' href="/journals_summaries">Summaries</a></li>
+        <li className="nav-item"><a className='nav-link' href="/dashboard">Dashboard</a></li>
+        <li className="nav-item"><a className='nav-link' href="/notes">Notes</a></li>
+        <li className="nav-item"><a className='nav-link' href="/register">Register</a></li>
 
-        {
-          userId ? <li><a href="/logout">Logout</a></li>: 
-        <li><a href="/login">Login</a></li>
+        { 
+          userId ? <li className="nav-item"><a className='btn btn-outline' href="/logout">Logout</a></li>: 
+        <li className="nav-item"><a className='btn btn-outline' href="/login">Login</a></li>
         }
-        <li><a href="/about">About</a></li>
+        <li className="nav-item"><a className='nav-link' href="/about">About</a></li>
       </ul>
+      </div>
     </nav>
   );
 }

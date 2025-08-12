@@ -78,11 +78,7 @@ function Dashboard({userId, navigate, setUserId, setUsername, token}) {
 
     return (
         <>
-      <div className='main-content'> 
-        <a href="https://github.com/mrDNA219/3140_Project" target="_blank">
-          <img src={medSiftLogo} className="logo lighting rounded" alt="Vite logo"/>
-        </a>
-        <h1 className="header1 lighting">Dashboard</h1>
+        <h1>Dashboard</h1>
 
         {/* theme stuff not finished yet! */}
         {/* <button id="theme-button">Swap</button> */}
@@ -153,9 +149,8 @@ function Dashboard({userId, navigate, setUserId, setUsername, token}) {
           </div>
         }
         <button style={{color: 'red'}}onClick={handleDeleteUser}>DELETE ACCOUNT</button>
-      </div>
         </>
     )
-}
+};
 
 export default Dashboard;
