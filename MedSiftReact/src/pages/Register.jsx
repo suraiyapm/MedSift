@@ -24,7 +24,9 @@ function Register({navigate, setUserId, setUsername}) {
 
   return (
     <div className='main-content'>
-        <div className='card frosted lighting'>
+      <div class="g-signin2" data-onsuccess="onSignIn">
+      </div>
+        <div className='card'>
             <form onSubmit={handleRegister} >
                 <h2 className="header1 white-text lighting-layer margin-bottom-25px">Register</h2>
                 <input type="text" id="regi-username" placeholder="Username" value={newUser.username} onChange={(e) => setNewUser({ ...newUser, username: e.target.value})} />

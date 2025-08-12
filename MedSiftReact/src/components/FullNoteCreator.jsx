@@ -20,7 +20,7 @@ function FullNoteCreator({journal, userId, token}) {
 
     return (
         <div className="card">
-            <textarea type='text' value={fullJournalText} onChange={(e) => { 
+            <textarea spellCheck="false" type='text' value={fullJournalText} onChange={(e) => { 
                 e.preventDefault();
                 setFullJournalText(e.target.value)}}
                 ></textarea>
