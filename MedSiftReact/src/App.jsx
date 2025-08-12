@@ -14,7 +14,6 @@ function App() {
   const [userId, setUserId] = useState('');
   const navigate = useNavigate();
  
-  console.log("username app level: ", username);
   async function grabUserIdFromStorage() {
     if(!userId){
       setUserId( window.localStorage.getItem('userId'));

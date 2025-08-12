@@ -115,7 +115,7 @@ function Dashboard({userId, navigate, setUserId, setUsername, token, username}) 
           usersJournals ? usersJournals.map((jrn) => {
             const {title, authors, journal, pubdate, pages, volume, issue, elocationid, _id} = jrn;
             return (
-              <div key={_id} className='card frosted-more lighting rounded'>
+              <div key={_id} className='card'>
                 <h2>Title</h2>
                 <p>{title}</p>
                 <h2>Authors</h2>

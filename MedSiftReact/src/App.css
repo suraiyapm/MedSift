@@ -28,7 +28,8 @@ textarea {
 } */
 .card {
   padding: 2em;
-  /* border-radius: 39px; */
+  border: black solid 1px;
+  border-radius: 39px;
   background: #667eea;
   box-shadow:  21px 21px 37px var(--boxShadow),
               -21px -21px 37px var(--boxLight);
