@@ -7,6 +7,7 @@ function Logout({ navigate, setUserId }) {
 
       window.localStorage.removeItem("userId");
       window.localStorage.removeItem("token");
+      window.localStorage.removeItem("username");
       setUserId("");
       navigate("/login");
     };

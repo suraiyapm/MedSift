@@ -14,7 +14,7 @@ function Navigation({ navigate, userId, token }) {
         <li className="nav-item"><a className='nav-link' href="/journals_summaries">Summaries</a></li>
         <li className="nav-item"><a className='nav-link' href="/dashboard">Dashboard</a></li>
         <li className="nav-item"><a className='nav-link' href="/notes">Notes</a></li>
-
+        <li className="nav-item"><a className='nav-link' href="/about">About</a></li>
         { 
           userId && token ? <li className="nav-item"><a className='btn btn-outline' href="/logout">Logout</a></li>: 
           <>
@@ -22,7 +22,6 @@ function Navigation({ navigate, userId, token }) {
             <li className="nav-item"><a className='nav-link' href="/register">Register</a></li>
           </>
         }
-        <li className="nav-item"><a className='nav-link' href="/about">About</a></li>
       </ul>
       </div>
     </nav>

@@ -38,7 +38,7 @@ const fetchPapersHelper = async (e) => {
 
     return ( 
         <>
-        <h1>Search Medical Journals</h1>
+        <h1>Search Full Medical Journals</h1>
         <form style={{display: 'flex', flexDirection: 'column'}} onSubmit={fetchPapersHelper}>
             <input style={{margin: '1rem'}}name='formInput' type="text" value={journalSearch} placeholder='enter search query' onChange={(e) => setJournalSearch(e.target.value)}></input>
             <button type="submit" className="header1 outline">Search</button>

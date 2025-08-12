@@ -3,7 +3,7 @@ import medSiftLogo from '/MedSiftLogo1-SPM.png';
 import { deleteUser, getAllJournalsByUserId, deleteJournal, getAllUsersFullJournalsByUserId, deleteFullJournal, updateFullJournal} from '../api';
 import { useEffect, useRef, useState } from 'react';
 
-function Dashboard({userId, navigate, setUserId, setUsername, token}) {
+function Dashboard({userId, navigate, setUserId, setUsername, token, username}) {
   const [fullJournals, setFullJournals] = useState([]);
   const [usersJournals, setUsersJournals] = useState([]);
   const [newFullJournalText, setNewFullJournalText] = useState('');
@@ -78,18 +78,13 @@ function Dashboard({userId, navigate, setUserId, setUsername, token}) {
 
     return (
         <>
-        <h1>Dashboard</h1>
-
-        {/* theme stuff not finished yet! */}
-        {/* <button id="theme-button">Swap</button> */}
-
-        {/* <script>
-          const themeButton = document.getElementById('theme-button');
-          const body = document.body;
-          body.classList.add('light');
-          themeButton.addEventListener('click', )
-        </script> */}
-        <h2 className="glow bold-dark-shadow frosted padding1">Saved Full Journals</h2>
+        <div className='dashboard-header-div'>
+          <div className='dashboard-username-icon'>
+            <p className='dashboard-username-icon-text'>{username[0]}</p>
+            </div>
+          <h1>{username}'s Dashboard</h1>
+        </div>
+        <h2>Saved Full Journals:</h2>
         {
           fullJournals ? fullJournals.map((fullJournal) => {
             const {_id, text} = fullJournal;
@@ -115,7 +110,7 @@ function Dashboard({userId, navigate, setUserId, setUsername, token}) {
           </div>
         }
         <div className="spacer1"/>
-        <h2 className="header1 lighting">Saved Journal Summaries:</h2>
+        <h2>Saved Journal Summaries:</h2>
         {
           usersJournals ? usersJournals.map((jrn) => {
             const {title, authors, journal, pubdate, pages, volume, issue, elocationid, _id} = jrn;

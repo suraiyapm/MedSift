@@ -17,6 +17,7 @@ function Login({navigate, setUserId, setToken, setUsername}) {
       setToken(result.token);
       window.localStorage.setItem('token', result.token);
       setUsername(result.data[0].username);
+      window.localStorage.setItem('username', result.data[0].username);
       navigate('/');
     } else {
       alert(`${result.message}`);
@@ -24,14 +25,12 @@ function Login({navigate, setUserId, setToken, setUsername}) {
   };
 
   return (
-    <div className='main-content'>
-        <div className='card frosted lighting'>
-            <form onSubmit={handleLogin} >
-                <input type="text" placeholder="Username" value={loginInfo.username} onChange={(e) => setLoginInfo({ ...loginInfo, username: e.target.value})} />
-                <input type="password" placeholder="Password" value={loginInfo.password} onChange={(e) => setLoginInfo({ ...loginInfo, password: e.target.value})} />
-                <button type="submit" className="header1 margin-left-18px rounded lighting-layer outline">Login</button>
-            </form>
-        </div>
+    <div className="card" style={{justifyContent: 'center', alignItems:'center'}}>
+      <form onSubmit={handleLogin} style={{marginBottom: '17.5rem'}}>
+          <input style={{marginBottom: '1rem'}}type="text" placeholder="Username" value={loginInfo.username} onChange={(e) => setLoginInfo({ ...loginInfo, username: e.target.value})} />
+          <input type="password" placeholder="Password" value={loginInfo.password} onChange={(e) => setLoginInfo({ ...loginInfo, password: e.target.value})} />
+          <button type="submit" className="header1 outline">Login</button>
+      </form>
     </div>
   );
 }

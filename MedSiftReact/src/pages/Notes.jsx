@@ -45,7 +45,7 @@ function Notes({userId, token}) {
                     </div>
                     );
                 }) : 
-                    <div className='card rounded lighting frosted-more white-text outline'>
+                    <div className='card'>
                         <p>Notes empty...please login or create a note!</p>
                     </div> 
             }

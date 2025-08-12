@@ -11,6 +11,13 @@
   font-family: 'oswald-medsift';
 } */
 
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+}
+
 
 .funnel-sans-medsift {
   font-family: "Funnel Sans", sans-serif;
@@ -227,6 +234,11 @@ button:focus-visible {
   button {
     background-color: #ffffff;
   }
+}
+
+.dashboard-username-icon-text {
+  font-size: 3.3rem !important;
+  font-weight: bold;
 }
 
 

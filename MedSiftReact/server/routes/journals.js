@@ -25,7 +25,7 @@ journalsRouter.post('/', jwtAuthorization, async (req, res) => {
     try {
         await newJournal.save();
         res.send({ success: true, data: newJournal});
-    } catch (error){
+    } catch (error) {
         console.error(error);
         res.send({ success: false, message: "Server error creating a journal"});
 
@@ -45,7 +45,7 @@ journalsRouter.delete('/:journalId', jwtAuthorization, async (req, res) => {
         console.error(error);
         res.send({ success: false, message: "Server error deleting journal"});
     }
-})
+});
 
 
 export default journalsRouter;

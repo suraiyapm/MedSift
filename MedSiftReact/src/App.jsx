@@ -14,22 +14,31 @@ function App() {
   const [userId, setUserId] = useState('');
   const navigate = useNavigate();
  
+  console.log("username app level: ", username);
   async function grabUserIdFromStorage() {
     if(!userId){
       setUserId( window.localStorage.getItem('userId'));
     }
-  }
+  };
 
   async function persistToken() {
     const storedToken = window.localStorage.getItem('token');
     if(storedToken){
       setToken(storedToken);
     }
-  }
+  };
+
+  async function persistUsername() {
+    const usernameLS = window.localStorage.getItem('username');
+    if(usernameLS){
+      setUsername(usernameLS);
+    }
+  };
 
   useEffect(() => {
     grabUserIdFromStorage();
     persistToken();
+    persistUsername();
   }, [token]);
   
   return (
@@ -37,7 +46,7 @@ function App() {
     <Navigation navigate={navigate} userId={userId} token={token}/>
     <div className='main-content'>
       <Routes>
-        <Route path="/dashboard" element={<Dashboard userId={userId} setUserId={setUserId} token={token} navigate={navigate} setUsername={setUsername}/>} />
+        <Route path="/dashboard" element={<Dashboard userId={userId} setUserId={setUserId} token={token} navigate={navigate} setUsername={setUsername} username={username}/>} />
         <Route path="/about" element={<About />} />
         <Route path="/" element={<Home navigate={navigate} username={username}/>} />
         <Route path="/journals" element={<Journals navigate={navigate} userId={userId} token={token}/>} />

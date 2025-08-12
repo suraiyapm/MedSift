@@ -40,14 +40,14 @@ function Register({navigate, setUserId, setUsername}) {
 
   return (
     <>
-    <GoogleLogin onSuccess={(response) => {handleGoogleLogin(response)}} onError={console.log('login failed')}></GoogleLogin>
-      <div className='card'>
-          <form onSubmit={handleRegister} >
-              <input type="text" id="regi-username" placeholder="Username" value={newUser.username} onChange={(e) => setNewUser({ ...newUser, username: e.target.value})} />
-              <input type="password" id="regi-password" placeholder="Password" value={newUser.password} onChange={(e) => setNewUser({ ...newUser, password: e.target.value})} />
-              <button type="submit" id="regi-sub" className="rounded bold outline frosted-more lighting-layer">Register</button>
+    <div className='card' style={{justifyContent: 'center', alignItems:'center'}}>
+          <form style={{marginBottom: '15rem'}}onSubmit={handleRegister} >
+              <input style={{marginBottom: '1rem'}} type="text" placeholder="Username" value={newUser.username} onChange={(e) => setNewUser({ ...newUser, username: e.target.value})} />
+              <input type="password" placeholder="Password" value={newUser.password} onChange={(e) => setNewUser({ ...newUser, password: e.target.value})} />
+              <button type="submit" className="header1 outline">Register</button>
           </form>
-      </div>
+      <GoogleLogin onSuccess={(response) => {handleGoogleLogin(response)}} onError={console.log('login failed')}></GoogleLogin>
+    </div>
     </>
   );
 };

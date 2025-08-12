@@ -47,10 +47,10 @@ async function createJournalHelper(token, journal){
 
     return ( 
         <>
-        <h1 className="header1 frosted lighting glow-more">Search Medical Journal Summaries</h1>
+        <h1>Search Medical Journal Summaries</h1>
         <form style={{display: 'flex', flexDirection: 'column'}} onSubmit={fetchPapersHelper}>
             <input style={{margin: '1rem'}}name='formInput' type="text" value={journalSearch} placeholder='enter search query' onChange={(e) => setJournalSearch(e.target.value)}></input>
-            <button type="submit" className="rounded header1 lighting bold outline glow">Search</button>
+            <button type="submit" className="header1 outline">Search</button>
         </form>
         {
             journals.length ? journals.map((journal) => {
@@ -75,7 +75,7 @@ async function createJournalHelper(token, journal){
                 );
             }) : 
              <div className="card">
-                <p>Enter a search query to find medical journals</p>    
+                <p>Enter a search query to find medical journal summaries</p>    
             </div>
         }
         </>
