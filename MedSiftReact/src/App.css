@@ -30,8 +30,8 @@ textarea {
   padding: 2em;
   border-radius: 39px;
   background: #667eea;
-  box-shadow:  21px 21px 37px #4f61b4,
-              -21px -21px 37px #7d9bff;
+  box-shadow:  21px 21px 37px var(--boxShadow),
+              -21px -21px 37px var(--boxLight);
   display: flex;
   flex-direction: column;
   overflow: auto;
@@ -45,7 +45,7 @@ textarea {
 }
 .frosted {
   backdrop-filter:blur(5px) !important;
-  background:rgba(199, 199, 199, 0.274) !important;
+  background:#697fe18c !important;
   border-radius:16px !important;
   border-top:1px groove rgba(108, 108, 108, 0.02);
   border-left:1px groove rgba(92, 92, 92, 0.02);
@@ -55,7 +55,7 @@ textarea {
 }
 .frosted-more {
   backdrop-filter:blur(10px) !important;
-  background:rgba(164, 164, 164, 0.436) !important;
+  background:#697fe19b !important;
   border-radius:16px !important;
   border-top:1px groove rgba(108, 108, 108, 0.02);
   border-left:1px groove rgba(92, 92, 92, 0.02);
@@ -71,8 +71,8 @@ textarea {
 .header1 {
   font-weight:bold;
   /* text-shadow:0 2px 12px #7a5ff0; */
-  box-shadow:0 6px 18px #b19750;
-  background-color: #fde7ad;
+  box-shadow:0 6px 18px var(--boxShadow);
+  background-color: var(--gradient);
   padding-top:8px;
   padding-bottom:10px;
   padding-left:12px;
@@ -92,9 +92,9 @@ img.about-photos {
     -8px -8px 20px rgba(255, 255, 255, 0.468),  */
     /* 0 8px 32px rgba(0, 0, 0, 0.956), */
     /* -15px -8px 25px rgba(255, 247, 233, 0.648) #fce7a3, */
-    -15px -8px 55px #fce7a3,
-    8px 6px 16px /*rgba(0, 0, 0, 0.393)*/ #b4711fb4 , /* bottom right */
-    inset 2px 2px 6px rgba(255, 247, 233, 0.484),
+    -15px -8px 55px var(--light),
+    8px 6px 16px /*rgba(0, 0, 0, 0.393)*/ var(--shadow) , /* bottom right */
+    inset 2px 2px 6px #3e2ca52e,
     inset 0 0 12px 15px rgba(255, 255, 255, 0.103), /* (Mostly for me to remember) when shadow has 4 numbers, it's horizontal offset/x, vertical offset/y, blur radius, then SPREAD radius! */
     inset -2px -2px 4px rgba(0, 0, 0, 0.268) !important;
     border-top:1px groove rgba(108, 108, 108, 0.02) !important;
@@ -107,9 +107,9 @@ img.about-photos {
     -8px -8px 20px rgba(255, 255, 255, 0.468),  */
     /* 0 8px 32px rgba(0, 0, 0, 0.956), */
     /* -15px -8px 25px rgba(255, 247, 233, 0.648) #fce7a3, */
-    -15px -8px 55px #fcfaf3d0,
-    8px 6px 16px /*rgba(0, 0, 0, 0.393)*/ #726656b4 , /* bottom right */
-    inset 2px 2px 6px rgba(255, 247, 233, 0.484),
+    -15px -8px 55px var(--light),
+    8px 6px 16px /*rgba(0, 0, 0, 0.393)*/ var(--shadow) , /* bottom right */
+    inset 2px 2px 6px #3e2ca52e,
     inset 0 0 12px 15px rgba(255, 255, 255, 0.103), /* (Mostly for me to remember) when shadow has 4 numbers, it's horizontal offset/x, vertical offset/y, blur radius, then SPREAD radius! */
     inset -2px -2px 4px rgba(0, 0, 0, 0.268) !important;
     border-top:1px groove rgba(108, 108, 108, 0.02) !important;
@@ -125,8 +125,8 @@ img.about-photos {
   margin-bottom: 25px;
   will-change: filter;
   transition: filter 300ms;
-  background-color:#fbe29d;
-  box-shadow: 0px 2px 16px #bba15b;
+  background-color:var(--gradient);
+  box-shadow: 0px 2px 16px var(--shadow);
   border-radius:8px;
 }
 .logo:hover {
@@ -206,7 +206,7 @@ img.about-photos {
 }
 #countdown-container {
   color:white;
-  text-shadow: 0 4px 6px #b19750;
+  text-shadow: 0 4px 6px var(--shadow);
   font-weight:bold;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   padding-top:12px;
@@ -215,8 +215,9 @@ img.about-photos {
   padding-right:25px;
 }
 #countdown-data {
-  color:#ff9b8a;
-  text-shadow: 0 6px 6px #ffe499 !important;
+  /* color:#ff9b8a; */
+  color:#bd7fb9;
+  text-shadow: 0 6px 8px var(--shadow) !important;
 }
 #create-notes-button {
   margin: 2rem;

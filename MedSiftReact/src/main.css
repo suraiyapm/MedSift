@@ -20,8 +20,46 @@
   font-style: normal;
 }
 
+/* ____________________________________________________________________________ */
+body {
+  /* background-image: url(https://images.pexels.com/photos/3683041/pexels-photo-3683041.jpeg);
+  background-repeat: repeat; */
+  background: var(--gradient);
+  background-size: 100%;
+  padding: 0d;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-height: 100vh;
+  min-width: 80vw;
+  box-sizing: border-box;
+  /* background-image:linear-gradient(#bcc0ed, #242a4c); */
+  /* color: black; */
+  /* test theme stuff */
+  /* [data-scheme='dark'] & {
+    background-image:linear-gradient(#07080f, #0b0b0f);
+    color:rgb(228, 228, 228); */
+    /* background-color: light-dark(aliceblue, blue); */
+    color:light-dark(black,white);
+    background-color: #e5e5f7;
+opacity: 0.8;
+/* pattern stuff below */
+background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, var(--blue) 42px ), repeating-linear-gradient(#5f77e0, var(--darkBlue));
 
+}
+/* ____________________________________________________________________________ */
+/* ____________________________________________________________________________ */
 :root {
+  --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --blue:#667eea;
+  --purple:#764ba2;
+  --darkBlue:#4a60c0;
+  --darkPurple:#653694;
+  --shadow:#262265;
+  --light:#898ceb;
+  --boxShadow:#4f61b4;
+  --boxLight:#7d9bffd6;
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -33,6 +71,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* ____________________________________________________________________________ */
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -116,28 +156,6 @@ a:hover {
   color: #1c6eea;
 }
 /* anchor end */
-
-body {
-  /* background-image: url(https://images.pexels.com/photos/3683041/pexels-photo-3683041.jpeg);
-  background-repeat: repeat; */
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-size: 100%;
-  padding: 0d;
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-height: 100vh;
-  min-width: 80vw;
-  box-sizing: border-box;
-  /* background-image:linear-gradient(#bcc0ed, #242a4c); */
-  /* color: black; */
-  /* test theme stuff */
-  /* [data-scheme='dark'] & {
-    background-image:linear-gradient(#07080f, #0b0b0f);
-    color:rgb(228, 228, 228); */
-    /* background-color: light-dark(aliceblue, blue); */
-    color:light-dark(black,white);
-}
 
 p {
   font-size: 22px;
