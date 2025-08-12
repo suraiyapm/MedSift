@@ -15,7 +15,7 @@ function Home({navigate, username}) {
         <a href="/about">
         </a>
         <div className="spacer1"/>
-      <div className="card">
+      <div className="card frosted rounded lighting">
         <p className="transparent-bkg">
             Welcome to MedSift! This app is designed to be a one-stop-shop for med students to find and aggregate relevant 
             materials quickly and efficiently, take and organise notes that directly reference said materials, and store
