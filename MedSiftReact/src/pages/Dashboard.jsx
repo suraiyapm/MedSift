@@ -79,10 +79,20 @@ function Dashboard({userId, navigate, setUserId, setUsername, token, username}) 
     return (
         <>
         <div className='dashboard-header-div'>
-          <div className='dashboard-username-icon'>
-            <p className='dashboard-username-icon-text'>{username[0]}</p>
-            </div>
-          <h1>{username}'s Dashboard</h1>
+          {
+            username ? 
+            <>
+              <div className='dashboard-username-icon'>
+                <p className='dashboard-username-icon-text'>{username[0]}</p>
+              </div>
+              <h1>{username}'s Dashboard</h1> 
+            </>
+          :
+           <>
+           <h1>Dashboard</h1>
+          </>
+
+          }
         </div>
         <h2>Saved Full Journals:</h2>
         {
