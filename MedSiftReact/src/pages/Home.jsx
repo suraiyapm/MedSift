@@ -3,6 +3,7 @@ import { Countdown } from '../components';
 
 
 function Home({navigate, username}) { 
+  console.log("username: ", username);
 
     return (
     <>
