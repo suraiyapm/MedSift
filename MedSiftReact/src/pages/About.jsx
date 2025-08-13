@@ -18,13 +18,13 @@ function About() {
             </p>
             <img src={pic1} className="about-photos" id="pic1specific" alt="Sitting around a table, tablets out" />
             <p>
-              There's a lacuna in the world of digital, medical tools.
+              There's a void in the world of digital, medical tools.
               Authors have Scrivener, journalists have Zotero, but, when it comes to the
               organization of medical topic exploration, there isn't quite anything to tie it all together.
             </p>
               <img src={pic3} className="about-photos" id="pic3specific" alt="Three monitors, scans" />
             <p>
-              So, we here at [Brooklyn College? 3140? MedSift crew?] have made a (timed) mission to fill this void.
+              So, the MedSift crew have made a mission to fill this void.
               With an innovative idea and an ambitious deadline, we're striving to improve the accessibility
               and ease of access of convenient a convenient medical tool!
               As medical education is increasingly reliant on digital resources, students need smarter,
