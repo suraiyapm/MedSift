@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { createFullJournal } from "../api";
+import { ToastContainer, toast } from 'react-toastify';
 
 function FullNoteCreator({journal, userId, token}) {
 
@@ -8,7 +9,7 @@ function FullNoteCreator({journal, userId, token}) {
     async function createFullJournalHelper(journal){
     const result = await createFullJournal(token, journal);
     if(!result.message){
-        alert('Successfully saved journal');
+        toast('Successfully saved journal');
     } else {
         alert(`${result.message}`);
     }
@@ -20,6 +21,7 @@ function FullNoteCreator({journal, userId, token}) {
 
     return (
         <div className="card">
+            <ToastContainer />
             <textarea spellCheck="false" type='text' value={fullJournalText} onChange={(e) => { 
                 e.preventDefault();
                 setFullJournalText(e.target.value)}}

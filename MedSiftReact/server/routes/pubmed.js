@@ -33,7 +33,7 @@ pubmedRouter.get("/:queryTerm", async (req, res) => {
         res.send(fetchResult);
     } catch(error){
         console.error(error);
-        res.send({ succes: false, message: "Server Error"});
+        res.send({ succes: false, message: "Server error fetching pubmed papers"});
     }
 });
 

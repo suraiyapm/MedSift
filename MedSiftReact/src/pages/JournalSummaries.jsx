@@ -1,5 +1,6 @@
 import { fetchPubMedSummaries, createJournal } from "../api";
 import { useEffect, useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 
 function JournalSummaries({userId, token}) {
     const [journals, setJournals] = useState([]);
@@ -39,7 +40,7 @@ function transformJournalData(apiData) {
 async function createJournalHelper(token, journal){
     const result = await createJournal(token, journal);
     if(!result.message){
-        alert('Successfully saved journal');
+        toast('Successfully saved journal');
     } else {
         alert(`${result.message}`);
     }
@@ -47,6 +48,7 @@ async function createJournalHelper(token, journal){
 
     return ( 
         <>
+        <ToastContainer />
         <h1>Search Medical Journal Summaries</h1>
         <form style={{display: 'flex', flexDirection: 'column'}} onSubmit={fetchPapersHelper}>
             <input style={{margin: '1rem'}}name='formInput' type="text" value={journalSearch} placeholder='enter search query' onChange={(e) => setJournalSearch(e.target.value)}></input>
