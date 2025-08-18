@@ -17,7 +17,7 @@ usersRouter.post('/register', async (req, res) =>
         await newUser.save();
         res.send({ success: true, data: newUser}); 
     } catch(error){
-        res.send({ success: false, message: "Register server error"});
+        res.send({ success: false, message: "Register server error...username/password may be taken"});
         throw(error);
     }
 });
@@ -30,7 +30,7 @@ usersRouter.post('/login', async (req, res) => {
     }
     try {
     const userLogin = await User.find({ username: user.username, password: user.password});
-    if(userLogin){
+    if(userLogin.length){
         const token = jwt.sign({user: user.username}, process.env.JWT_SECRET);
         res.send({ success: true, data: userLogin, token: token});
     } else {
