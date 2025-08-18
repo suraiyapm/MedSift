@@ -32,7 +32,7 @@ pubmedSummaryRouter.get("/:queryTerm", async (req, res) => {
         res.send(summaryResult);
     } catch(error){
         console.error(error);
-        res.send({ succes: false, message: "Server Error"});
+        res.send({ succes: false, message: "Server error fetching pubmed summaries"});
     }
 });
 
