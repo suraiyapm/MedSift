@@ -133,6 +133,8 @@ export const createFullJournal = async (token, {...fullJournal}) => {
     }
 }
 
+//change name to journal summaries to be concise
+
 export const getAllJournalsByUserId = async (token, userId) => {
     try {
         const headers = createHeaders(token);

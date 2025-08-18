@@ -2,6 +2,7 @@
 import medSiftLogo from '/MedSiftLogo1-SPM.png';
 import { deleteUser, getAllJournalsByUserId, deleteJournal, getAllUsersFullJournalsByUserId, deleteFullJournal, updateFullJournal} from '../api';
 import { useEffect, useRef, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
 function Dashboard({userId, navigate, setUserId, setUsername, token, username}) {
   const [fullJournals, setFullJournals] = useState([]);
@@ -61,7 +62,7 @@ function Dashboard({userId, navigate, setUserId, setUsername, token, username}) 
   const updateFullJournalHelper = async(token, fullJournalId, updatedText) => {
     const result = await updateFullJournal(token, fullJournalId, updatedText);
     if(result) {
-      alert('Succuessfully updated Journal!');
+      toast('Succuessfully updated Journal!');
       getAllFullJournalsHelper(token, userId);
     } else {
       alert(`${result.message}`);
@@ -78,6 +79,7 @@ function Dashboard({userId, navigate, setUserId, setUsername, token, username}) 
 
     return (
         <>
+        <ToastContainer />
         <div className='dashboard-header-div'>
           {
             username ? 

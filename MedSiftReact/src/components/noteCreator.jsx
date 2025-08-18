@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { createNote } from '../api/index';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 function NoteCreator({userId, getNotesHelper, token}) {
@@ -13,7 +14,7 @@ function NoteCreator({userId, getNotesHelper, token}) {
         console.log("token near note creator: ", token);
       const result = await createNote(token, newNote);
       if(result){
-         alert("Note successfully created!");
+         toast("Note successfully created!");
          getNotesHelper();
       } else {
         alert(`${result.message}`);
@@ -27,6 +28,7 @@ function NoteCreator({userId, getNotesHelper, token}) {
 
     return (
         <>
+        <ToastContainer />
         <div className='main-content'>
             <h1>Note Creator</h1>
             <form onSubmit={handleSubmit} >
