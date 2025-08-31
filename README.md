@@ -1,4 +1,4 @@
-# 3140_Project
+<!-- # 3140_Project
 ## Placeholder Team Name: MedReader Team(?)
 ## Member Roles:
 [Suraiya P. Mark](https://github.com/suraiyapm/3140_Project/tree/main/Suraiya-Mark_Intro-Stuff) -potentially front-end dev  
@@ -16,4 +16,4 @@ Here is a (VERY rough) draft/outline for what this may look like:
 (One potential format we may have)
 We'll have separate folders for the HTML introductions, and then a project folder.
 In the actual project folder, we'll maybe have client/ for front-end, server/ for back-end, database/, and maybe a separate docs/ area for documentation about the project.
-I'd like to thoroughly set up several relative links in the future extended version of the project README, for organization and ease of access, and readability.
+I'd like to thoroughly set up several relative links in the future extended version of the project README, for organization and ease of access, and readability. -->
