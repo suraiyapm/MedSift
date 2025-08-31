@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Resume</title>
+<link rel="stylesheet" href="style.css"></link>
+</head>
+<body>
+
+<img src="resumephoto.jpg" alt="A photo of me" />
+<h1>RABIA REHMEIN</h1>
+<div id="main-content">
+<section id="introduction">
+<p>Hello!I am Rabia Rehmein, My major is Computer Science. I am a senior currently and for upcoming year. </p> </section>
+
+<section id="favorite-places">
+  <h2>My favorite places of NYC:</h2>
+  <div class="section-block">
+    <ol>
+      <li>High Line</li>
+      <li>Soho</li>
+      <li>Central Park</li>
+      <li>The Met Museum</li>
+    </ol>
+  </div>
+</section>
+
+<section id="contact">
+<div class="contact-item">
+<a href="https://github.com/rabia-rehmein">GitHub</a>
+</div>
+ <div class= "contact-item">
+ <a href= "https://linkedin.com/in/rabia-nadeem">LinkedIn</a>
+</div>
+<div class= "contact-item">
+<a href="mailto:rabiarehmein@gmail.com">rabiarehmein@gmail.com</a>
+</div>
+</section>
+
+
+<h5>My Achievements Table</h5>
+<table>
+<tr>
+<th>Category</th>
+<th>Accomplishment</th>
+<th>year</th>
+</tr>
+<tr>
+<td>Academic</td>
+<td> Learned java </td>
+<td>2025</td>
+</tr>
+<tr>
+<td>Leadership</td>
+<td>Vice President of PSA</td>
+<td>2025</td>
+</tr>
+<tr>
+<td>Creative</td>
+<td>Started custom shoe painting business</td>
+<td>2025</td>
+</tr>
+</table>
+<div id="box-container">
+  <div class="box">1</div>
+  <div class="box">2</div>
+  <div class="box">3</div>
+  <div class="box">4</div>
+  <div class="box">5</div>
+  <div class="box">6</div>
+</div>
+</body>
+</html>

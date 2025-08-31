@@ -1,0 +1,244 @@
+
+/* .oswald-medsift {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+} */
+ /* https://fonts.googleapis.com/css2?family=Oswald&display=swap */
+
+/* * {
+  font-family: 'oswald-medsift';
+} */
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+}
+
+
+.funnel-sans-medsift {
+  font-family: "Funnel Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  /* weight- 300-800 */
+  font-style: normal;
+}
+
+/* ____________________________________________________________________________ */
+body {
+  /* background-image: url(https://images.pexels.com/photos/3683041/pexels-photo-3683041.jpeg);
+  background-repeat: repeat; */
+  /* background: var(--gradient); */
+  background-size: 100%;
+  padding: 0d;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-height: 100vh;
+  min-width: 80vw;
+  box-sizing: border-box;
+  /* background-image:linear-gradient(#bcc0ed, #242a4c); */
+  /* color: black; */
+  /* test theme stuff */
+  /* [data-scheme='dark'] & {
+    background-image:linear-gradient(#07080f, #0b0b0f);
+    color:rgb(228, 228, 228); */
+    /* background-color: light-dark(aliceblue, blue); */
+    color:light-dark(black,white);
+    background-color: #e5e5f7;
+opacity: 0.8;
+/* pattern stuff below */
+/* background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, var(--blue) 42px ), repeating-linear-gradient(#5f77e0, var(--darkBlue)); */
+/* background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, var(--blue) 42px ),
+repeating-linear-gradient(#6679e5, #654bae); */
+/* dot grid attempt */
+
+/* --dot-bkg: transparent; */
+
+--dot-color:#26226561;
+--dot-size: 2px;
+--dot-space: 20px;
+
+background:
+  radial-gradient(
+    circle var(--dot-size),
+    var(--dot-color) 99%,
+    transparent 100%
+  ) 0 0 / var(--dot-space) var(--dot-space),
+
+  var(--gradient);
+
+  background-repeat: repeat;
+}
+/* ____________________________________________________________________________ */
+/* ____________________________________________________________________________ */
+:root {
+  --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --blue:#667eea;
+  --purple:#764ba2;
+  --darkBlue:#4a60c0;
+  --darkPurple:#653694;
+  --shadow:#262265;
+  --light:#898ceb;
+  --boxShadow:#4f61b4;
+  --boxLight:#7d9bff6b;
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* ____________________________________________________________________________ */
+
+/* :root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+/* .nav-container {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-color:#fce7a3ad;
+  padding:0.5rem 1rem;
+  box-shadow:0 1px 10px #dbc57dad;
+  font-family:'funnel-sans-medsift', sans-serif; 
+} */
+img.nav-logo {
+  cursor: pointer;
+  padding-right:16px;
+}
+.navi-links {
+  list-style:none;
+  display:flex;
+  gap:1rem;
+  margin:0;
+  padding:0;
+  margin-left:14px;
+}
+/* .nav-links li {
+  display:inline;
+} */
+.navi-links li a {
+  /* background:none; */
+  background-image:radial-gradient(circle, #e4644d65 50%,#ae2a136b 100%);
+  border-radius:8px;
+  border:solid;
+  border-color:aliceblue;
+  padding:0.5rem;
+  font-size:1.1rem;
+  cursor:pointer;
+  transition:color 0.3s ease;
+  color:white;
+  font-weight:bold;
+  text-shadow: 0px 1px 3px rgb(15, 15, 91);
+}
+.navi-links li a:hover {
+  background-image:radial-gradient(#3d678b, #274d6f);
+  /* background-image:none; */
+  color:#bec0f1;
+  padding:0.8rem;
+}
+
+#notes-text-area {
+  --notes_border:#907553b4;
+
+  width: 100%;
+  height: 80%;
+  background-image: radial-gradient(#e0d2a6, #cc9e65b4);
+  border-style:double;
+  border:4px solid var(--notes_border);
+  /* border-radius:10px; */
+  padding:5px;
+  font-weight:600;
+  color:white;
+}
+
+
+/* anchor */
+a {
+  font-weight: 500;
+  color: #1B4079;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #1c6eea;
+}
+/* anchor end */
+
+p {
+  font-size: 22px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* headings */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  background-color: #0a0c2700;
+}
+h4 {
+  font-weight:bold;
+}
+/* headings end */
+
+
+/* button */
+button {
+  margin-top: 1rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #686fe8;
+  /* box-shadow:0 0 6px 6px black; */
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+/* button end */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #ffffff;
+  }
+}
+
+.dashboard-username-icon-text {
+  font-size: 3.3rem !important;
+  font-weight: bold;
+}
+
+
